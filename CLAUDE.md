@@ -15,6 +15,14 @@ live outside it.
 - `"ref"` uses the form `Section 6: Parallel Parking` and must match a key in
   `docs/handbook.js`.
 - `"sign"` is optional and must match a key of `SIGN_ART` in `docs/app.js`.
+- **Answer choices follow the DMV sample-test style**, which the logic tests
+  enforce. All three options are grammatically parallel and comparable in
+  length, each is a plausible answer to the question actually asked, and no
+  option carries its own justification. Reasoning belongs in `"explain"`, shown
+  after answering. The correct answer must not be conspicuously the longest:
+  an earlier bank let someone score 37 of 46 by always choosing the longest
+  option, without knowing any of the material. Rework choices in bulk with
+  `node tools/apply-rewrites.js <file>`.
 - `"drills"` is optional and lists the focused-practice pools a question belongs
   to. Pools are curated in the data rather than detected at runtime, so they do
   not drift as questions are added:
