@@ -160,6 +160,37 @@ ok("focused draws prefer unseen questions", () => {
   assert.strictEqual(t.filter(x => seen[x.id]).length, 0);
 });
 
+ok("the correct answer cannot be guessed from its length", () => {
+  /* Answer choices follow the DMV sample-test style: parallel phrasing and
+     comparable length, with reasoning left to the explanation. If the correct
+     answer is conspicuously the longest, a test-taker can score well without
+     knowing the material, which defeats the purpose of practising. */
+  const conspicuous = BANK.filter(q => {
+    const [correct, ...rest] = q.choices.map(c => c.length);
+    const longestOther = Math.max(...rest);
+    return correct > longestOther * 1.25 && correct - longestOther >= 10;
+  }).map(q => q.id);
+  assert.deepStrictEqual(conspicuous, [],
+    conspicuous.length + " question(s) have a conspicuously long correct answer");
+
+  const longestCount = BANK.filter(q =>
+    q.choices[0].length === Math.max(...q.choices.map(c => c.length))).length;
+  const rate = longestCount / BANK.length;
+  assert.ok(rate < 0.55,
+    "correct answer is the longest option in " + Math.round(rate * 100) + "% of questions; keep it near chance");
+});
+
+ok("every distractor is a distinct, plausible alternative", () => {
+  for (const q of BANK) {
+    const norm = q.choices.map(c => c.trim().toLowerCase().replace(/[.,;:]$/, ""));
+    assert.strictEqual(new Set(norm).size, 3, q.id + " has duplicate choices");
+    q.choices.forEach(c => {
+      assert.ok(c.trim().length >= 3, q.id + " has an empty or trivial choice");
+      assert.ok(/[.?!]$/.test(c.trim()), q.id + ' choice should end with punctuation: "' + c + '"');
+    });
+  }
+});
+
 /* This test necessarily contains the character it searches for; that is why
    this file is not itself part of the list being checked. */
 ok("project copy carries no em dashes, handbook quotes keep theirs", () => {
