@@ -10,8 +10,8 @@ const QUESTION_BANK =
 [
   {
     "id": "LIC-01",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "If you move, you must notify DMV of your new address within:",
     "choices": ["10 days.","5 days.","30 days."],
     "answer": 0,
@@ -47,8 +47,8 @@ const QUESTION_BANK =
   },
   {
     "id": "LIC-05",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "During the first 12 months after getting a provisional license, a driver under 18 may NOT drive:",
     "choices": ["Between 11 p.m. and 5 a.m.","Between 10 p.m. and 6 a.m.","After 9 p.m. on school nights."],
     "answer": 0,
@@ -57,8 +57,8 @@ const QUESTION_BANK =
   },
   {
     "id": "LIC-06",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "During the first 12 months of holding a provisional license, you may transport passengers under 20 years old only when:",
     "choices": ["A licensed driver 25 or older rides with you.","You are driving to or from school.","The passengers are members of your family."],
     "answer": 0,
@@ -67,8 +67,8 @@ const QUESTION_BANK =
   },
   {
     "id": "LIC-07",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "To apply for an instruction permit, a person under 18 must be at least:",
     "choices": ["15½ years old.","15 years old.","16 years old."],
     "answer": 0,
@@ -77,8 +77,8 @@ const QUESTION_BANK =
   },
   {
     "id": "LIC-08",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "Before scheduling the behind-the-wheel drive test, a driver under 18 must have held an instruction permit for at least:",
     "choices": ["Six months.","Three months.","Twelve months."],
     "answer": 0,
@@ -87,18 +87,18 @@ const QUESTION_BANK =
   },
   {
     "id": "LIC-09",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "Before getting a license, a driver under 18 must practice driving for at least:",
-    "choices": ["50 hours, including 10 hours at night.","30 hours, including 5 hours at night.","100 hours, all during daylight."],
+    "choices": ["50 hours, including 10 hours at night.","30 hours, including 5 hours at night.","100 hours, including 20 at night."],
     "answer": 0,
     "explain": "Minors must practice at least 50 hours with a California-licensed driver who is at least 25 years old, and 10 of those hours must be at night.",
     "ref": "Section 2: Applying For A Driver's License"
   },
   {
     "id": "LIC-10",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "An adult with an instruction permit must practice driving with a California-licensed driver who is at least:",
     "choices": ["18 years old.","21 years old.","25 years old."],
     "answer": 0,
@@ -118,7 +118,7 @@ const QUESTION_BANK =
     "id": "LIC-12",
     "topic": "licensing",
     "q": "If you take your vision test wearing glasses or contact lenses, your driver's license will:",
-    "choices": ["Have a corrective lenses restriction.","Be issued only for daytime driving.","Expire sooner than a regular license."],
+    "choices": ["Have a corrective lenses restriction.","Be restricted to daytime driving.","Expire sooner than a regular license."],
     "answer": 0,
     "explain": "Taking the vision test with corrective or contact lenses places a corrective lenses restriction on your license.",
     "ref": "Section 3: Vision Test"
@@ -143,8 +143,8 @@ const QUESTION_BANK =
   },
   {
     "id": "LIC-15",
-    "topic": "licensing",
     "drills": ["numbers"],
+    "topic": "licensing",
     "q": "The horn on your drive test vehicle must be loud enough to be heard from at least:",
     "choices": ["200 feet.","100 feet.","500 feet."],
     "answer": 0,
@@ -191,7 +191,7 @@ const QUESTION_BANK =
     "id": "LIC-20",
     "topic": "licensing",
     "q": "If you are out-of-state and cannot renew your license before it expires, you may request:",
-    "choices": ["A one-year extension.","A five-year extension.","A waiver of all renewal requirements."],
+    "choices": ["A one-year extension.","A five-year extension.","A permanent renewal by mail."],
     "answer": 0,
     "explain": "Drivers who are out-of-state may request a one-year extension by submitting a request to DMV before the license expires. Limited-term licenses are not eligible.",
     "ref": "Section 4: Extend Your Driver's License"
@@ -218,7 +218,7 @@ const QUESTION_BANK =
     "id": "LIC-23",
     "topic": "licensing",
     "q": "A provisional driver with a medical need to drive during restricted hours must carry:",
-    "choices": ["A note signed by their physician.","A copy of their birth certificate.","No documentation at all."],
+    "choices": ["A note signed by their physician.","A copy of their birth certificate.","A copy of their insurance card."],
     "answer": 0,
     "explain": "The exception for a medical need requires carrying a physician-signed note stating the medical condition and the date you are expected to recover.",
     "ref": "Section 2: Minor's Restrictions and Exceptions"
@@ -236,15 +236,15 @@ const QUESTION_BANK =
     "id": "INT-01",
     "topic": "intro-driving",
     "q": "While driving, wearing a headset or earplugs in both ears is:",
-    "choices": ["Illegal.","Legal if the volume is low.","Legal on the freeway only."],
+    "choices": ["Illegal.","Legal if the volume is low.","Legal on the freeway."],
     "answer": 0,
     "explain": "It is illegal to wear a headset or earplugs in both ears while driving. You must be able to hear horns, sirens, and screeching tires that warn of hazards.",
     "ref": "Section 5: An Introduction to Driving"
   },
   {
     "id": "INT-02",
-    "topic": "intro-driving",
     "drills": ["numbers"],
+    "topic": "intro-driving",
     "q": "For hand-to-hand (push/pull) steering, your hands should start at:",
     "choices": ["9 and 3 o'clock.","12 and 6 o'clock.","10 and 2 o'clock."],
     "answer": 0,
@@ -262,8 +262,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INT-04",
-    "topic": "intro-driving",
     "drills": ["numbers"],
+    "topic": "intro-driving",
     "q": "When backing up while turning to see behind you, place your hand at what position on the steering wheel?",
     "choices": ["12 o'clock.","6 o'clock.","9 o'clock."],
     "answer": 0,
@@ -272,8 +272,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INT-05",
-    "topic": "intro-driving",
     "drills": ["numbers"],
+    "topic": "intro-driving",
     "q": "Before turning, you should signal at least:",
     "choices": ["100 feet before the turn.","50 feet before the turn.","25 feet before the turn."],
     "answer": 0,
@@ -293,7 +293,7 @@ const QUESTION_BANK =
     "id": "INT-07",
     "topic": "intro-driving",
     "q": "You should use your turn signals:",
-    "choices": ["Even when no other vehicles are around.","Only when other vehicles are close by.","Only when a posted sign requires it."],
+    "choices": ["Even when no other vehicles are around.","When other vehicles are close by.","When a posted sign requires it."],
     "answer": 0,
     "explain": "Always signal when turning, changing lanes, slowing, or stopping, even when you do not see other vehicles around you.",
     "ref": "Section 5: Signaling"
@@ -336,8 +336,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INT-12",
-    "topic": "intro-driving",
     "drills": ["numbers"],
+    "topic": "intro-driving",
     "q": "Dim your high-beam headlights to low beams within what distance of an oncoming vehicle?",
     "choices": ["500 feet.","300 feet.","1,000 feet."],
     "answer": 0,
@@ -346,8 +346,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INT-13",
-    "topic": "intro-driving",
     "drills": ["numbers"],
+    "topic": "intro-driving",
     "q": "Dim your high-beam headlights within what distance of a vehicle you are following?",
     "choices": ["300 feet.","500 feet.","100 feet."],
     "answer": 0,
@@ -356,8 +356,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INT-14",
-    "topic": "intro-driving",
     "drills": ["numbers"],
+    "topic": "intro-driving",
     "q": "You must turn on your headlights:",
     "choices": ["From 30 minutes after sunset to 30 minutes before sunrise.","From 30 minutes before sunset to 30 minutes after sunrise.","From sunset until sunrise."],
     "answer": 0,
@@ -386,7 +386,7 @@ const QUESTION_BANK =
     "id": "INT-17",
     "topic": "intro-driving",
     "q": "On mountain roads and in tunnels, you should drive with your headlights on:",
-    "choices": ["Even on sunny days.","Only at night.","Only when posted signs require it."],
+    "choices": ["Even on sunny days.","At night and in the rain.","When posted signs require it."],
     "answer": 0,
     "explain": "Use your headlights on mountain roads and in tunnels even on sunny days, so other drivers can see you.",
     "ref": "Section 5: Using Your Headlights"
@@ -413,7 +413,7 @@ const QUESTION_BANK =
     "id": "INT-20",
     "topic": "intro-driving",
     "q": "Fatigue and drowsiness while driving:",
-    "choices": ["Affect your vision and slow your reactions.","Only matter on trips longer than four hours.","Can be offset by driving faster."],
+    "choices": ["Affect your vision and slow your reactions.","Matter mainly on trips over four hours.","Can be offset by driving faster."],
     "answer": 0,
     "explain": "Fatigue and drowsiness affect your vision and increase your reaction time to hazards.",
     "ref": "Section 5: An Introduction to Driving"
@@ -422,7 +422,7 @@ const QUESTION_BANK =
     "id": "INT-21",
     "topic": "intro-driving",
     "q": "Which is true about prescription and over-the-counter medications?",
-    "choices": ["Both can make you an unsafe driver.","Only prescription medications affect driving.","Pharmacy medications are always safe."],
+    "choices": ["Both can make you an unsafe driver.","Prescription medications affect driving more.","Over-the-counter medications are safe."],
     "answer": 0,
     "explain": "Both prescription and over-the-counter medicines can make you an unsafe driver. Some cause sleepiness. Knowing their effects is your responsibility.",
     "ref": "Section 5: An Introduction to Driving"
@@ -431,7 +431,7 @@ const QUESTION_BANK =
     "id": "INT-22",
     "topic": "intro-driving",
     "q": "Physicians are required to report to DMV patients who are at least 14 years old and have:",
-    "choices": ["Conditions that may affect safe driving.","Any prescription for medication.","Poor eyesight of any kind."],
+    "choices": ["Conditions that may affect safe driving.","A prescription for medication.","Poor eyesight corrected by glasses."],
     "answer": 0,
     "explain": "Physicians must report patients at least 14 years old with medical conditions that may affect their ability to drive safely, such as a lapse of consciousness.",
     "ref": "Section 5: An Introduction to Driving"
@@ -458,7 +458,7 @@ const QUESTION_BANK =
     "id": "INT-25",
     "topic": "intro-driving",
     "q": "If you plan to turn shortly after crossing an intersection, you should signal:",
-    "choices": ["As you are almost through the intersection.","Well before you enter the intersection.","Only after you complete the turn."],
+    "choices": ["As you are almost through the intersection.","Well before you enter the intersection.","After you complete the turn."],
     "answer": 0,
     "explain": "Signal when you are almost through the intersection so drivers do not think you are turning at the intersection itself.",
     "ref": "Section 5: Signaling"
@@ -467,10 +467,19 @@ const QUESTION_BANK =
     "id": "INT-26",
     "topic": "intro-driving",
     "q": "Remember to turn off your turn signal:",
-    "choices": ["When you no longer need it.","Only when another driver honks.","Only at the end of your trip."],
+    "choices": ["When you no longer need it.","When another driver honks.","At the end of your trip."],
     "answer": 0,
     "explain": "Turn off your signal when you no longer need it so you do not mislead other drivers.",
     "ref": "Section 5: Signaling"
+  },
+  {
+    "id": "INT-27",
+    "topic": "intro-driving",
+    "q": "Blowing dust or smoke is making it hard to see other vehicles. You should turn on your:",
+    "choices": ["Headlights.","Parking lights.","Emergency flashers."],
+    "answer": 0,
+    "explain": "Use your headlights when conditions such as clouds, dust, smoke, or fog prevent you from seeing other vehicles. It is illegal to drive using only parking lights.",
+    "ref": "Section 5: Using Your Headlights"
   },
   {
     "id": "LAN-01",
@@ -485,7 +494,7 @@ const QUESTION_BANK =
     "id": "LAN-02",
     "topic": "lanes",
     "q": "You may cross a single set of double solid yellow lines to:",
-    "choices": ["Turn left into a driveway.","Pass a slow vehicle ahead of you.","Drive around any stopped traffic."],
+    "choices": ["Turn left into a driveway.","Pass a slow vehicle ahead of you.","Drive around stopped traffic."],
     "answer": 0,
     "explain": "Do not pass over double solid yellow lines. You may cross them only to turn left into or out of a driveway or private road, make a U-turn, use a left-entrance HOV lane, or when signs direct you around a closure.",
     "ref": "Section 6: Double Solid Yellow Lines"
@@ -494,7 +503,7 @@ const QUESTION_BANK =
     "id": "LAN-03",
     "topic": "lanes",
     "q": "Two sets of double solid yellow lines spaced two or more feet apart are considered:",
-    "choices": ["A barrier you may not drive across.","A divider for carpool lanes only.","A suggestion to keep right when convenient."],
+    "choices": ["A barrier you may not drive across.","A divider for carpool lanes.","A suggestion to keep right when convenient."],
     "answer": 0,
     "explain": "Two sets of double solid yellow lines two or more feet apart are a barrier. Do not drive on or over it, or make a left turn or U-turn across it, except at designated openings.",
     "ref": "Section 6: Double Solid Yellow Lines"
@@ -503,7 +512,7 @@ const QUESTION_BANK =
     "id": "LAN-04",
     "topic": "lanes",
     "q": "A broken yellow line next to your driving lane means:",
-    "choices": ["You may pass when it is safe.","Passing is never allowed.","The lane is for carpools only."],
+    "choices": ["You may pass when it is safe.","Passing is prohibited here.","The lane is reserved for carpools."],
     "answer": 0,
     "explain": "A broken yellow line indicates you may pass if the broken line is next to your driving lane, and only when it is safe.",
     "ref": "Section 6: Broken Yellow Line"
@@ -566,7 +575,7 @@ const QUESTION_BANK =
     "id": "LAN-11",
     "topic": "lanes",
     "q": "Before changing lanes, it is necessary to:",
-    "choices": ["Check your mirrors and your blind spot.","Slow down below the speed of traffic.","Honk to alert any nearby drivers."],
+    "choices": ["Check your mirrors and your blind spot.","Slow down below the speed of traffic.","Honk to alert nearby drivers."],
     "answer": 0,
     "explain": "Before changing lanes: signal, check your mirrors, check traffic beside and behind you, and look over your shoulder to make sure the lane is clear. It is not necessary to slow down.",
     "ref": "Section 6: Changing Lanes"
@@ -584,7 +593,7 @@ const QUESTION_BANK =
     "id": "LAN-13",
     "topic": "lanes",
     "q": "Who may use a carpool/HOV lane?",
-    "choices": ["Carpools, motorcycles, and decaled vehicles.","Any vehicle that is passing slower traffic.","Buses and taxis during posted hours."],
+    "choices": ["Carpools, motorcycles, and decaled vehicles.","Vehicles that are passing slower traffic.","Buses and taxis during posted hours."],
     "answer": 0,
     "explain": "HOV lanes are for vehicles with the posted minimum number of occupants, motorcyclists (unless otherwise posted), and low- or zero-emission vehicles displaying a special DMV-issued decal.",
     "ref": "Section 6: Carpool/HOV Lanes"
@@ -609,8 +618,8 @@ const QUESTION_BANK =
   },
   {
     "id": "LAN-16",
-    "topic": "lanes",
     "drills": ["numbers"],
+    "topic": "lanes",
     "q": "You may drive in a center left turn lane for no more than:",
     "choices": ["200 feet.","500 feet.","100 feet."],
     "answer": 0,
@@ -637,8 +646,8 @@ const QUESTION_BANK =
   },
   {
     "id": "LAN-19",
-    "topic": "lanes",
     "drills": ["numbers"],
+    "topic": "lanes",
     "q": "It is legal to drive in a bicycle lane when:",
     "choices": ["Turning, within 200 feet of an intersection.","Traffic in the regular lanes is heavy.","You are driving slower than 25 mph."],
     "answer": 0,
@@ -685,7 +694,7 @@ const QUESTION_BANK =
     "id": "LAN-24",
     "topic": "lanes",
     "q": "On a multilane road, the passing lane is:",
-    "choices": ["The far left lane, closest to the center divider.","The far right lane, closest to the shoulder.","Any lane that is currently empty."],
+    "choices": ["The far left lane, closest to the center divider.","The far right lane, closest to the shoulder.","Whichever lane is currently empty."],
     "answer": 0,
     "explain": "The passing lane is the far left lane, closest to the center divider.",
     "ref": "Section 6: Passing Lanes"
@@ -712,7 +721,7 @@ const QUESTION_BANK =
     "id": "LAN-27",
     "topic": "lanes",
     "q": "Before you change lanes, is it necessary to slow down?",
-    "choices": ["No, but be sure there is enough space.","Yes, always slow at least 5 mph.","Yes, unless you are on a freeway."],
+    "choices": ["No, but be sure there is enough space.","Yes, slow by at least 5 mph.","Yes, unless you are on a freeway."],
     "answer": 0,
     "explain": "It is not necessary to slow down before a lane change; make sure there is enough space for your vehicle and check your blind spots.",
     "ref": "Section 6: Changing Lanes"
@@ -727,20 +736,29 @@ const QUESTION_BANK =
     "ref": "Section 6: Bicycle Lanes"
   },
   {
+    "id": "LAN-29",
+    "topic": "lanes",
+    "q": "You are approaching an intersection to turn right and a bicycle lane runs along the curb. You should:",
+    "choices": ["Merge into the bicycle lane before turning.","Turn from the lane left of the bicycle lane.","Straddle the bicycle lane line as you turn."],
+    "answer": 0,
+    "explain": "Driving in a bicycle lane is illegal except when parking where permitted, entering or leaving the road, or turning within 200 feet of an intersection. Merge into the lane before the turn rather than turning across it.",
+    "ref": "Section 6: Bicycle Lanes"
+  },
+  {
     "id": "TRN-01",
     "topic": "turns",
     "q": "To make a right turn, you should:",
-    "choices": ["Drive close to the right edge of the road.","Swing wide to the left before turning.","Turn from any lane as long as you signal."],
+    "choices": ["Drive close to the right edge of the road.","Swing wide to the left before turning.","Turn from the second lane if you signal."],
     "answer": 0,
     "explain": "Drive close to the right edge of the road, watch for pedestrians and bicyclists, and complete your turn in the right lane without swinging wide into another lane.",
     "ref": "Section 6: Right Turns"
   },
   {
     "id": "TRN-02",
-    "topic": "turns",
     "drills": ["numbers"],
+    "topic": "turns",
     "q": "When preparing to turn right where there is a bike lane, you may drive in the bike lane:",
-    "choices": ["Within 200 feet of the turn, after checking for bicyclists.","Within 500 feet of the turn.","Never. You must turn from the traffic lane across the bike lane."],
+    "choices": ["Within 200 feet of the turn.","Within 500 feet of the turn.","Within 100 feet of the turn."],
     "answer": 0,
     "explain": "You can drive in a bike lane within 200 feet of a turn. Check for bicyclists in your blind spots before merging.",
     "ref": "Section 6: Right Turns"
@@ -767,7 +785,7 @@ const QUESTION_BANK =
     "id": "TRN-05",
     "topic": "turns",
     "q": "You may turn right at a red traffic light:",
-    "choices": ["After stopping, unless a sign prohibits it.","Without stopping whenever the way looks clear.","Only where a sign permits right turns."],
+    "choices": ["After stopping, unless a sign prohibits it.","Without stopping whenever the way looks clear.","Where a sign permits right turns."],
     "answer": 0,
     "explain": "You may turn right at a red light after a complete stop at the stop or limit line, yielding to pedestrians, unless a NO TURN ON RED sign is posted.",
     "ref": "Section 7: Solid Red Light"
@@ -803,7 +821,7 @@ const QUESTION_BANK =
     "id": "TRN-09",
     "topic": "turns",
     "q": "You may turn left against a red light only when:",
-    "choices": ["Turning from a one-way street onto a one-way street.","Turning from a two-way street onto a one-way street.","No traffic is visible in any direction."],
+    "choices": ["Turning from a one-way street onto a one-way street.","Turning from a two-way street onto a one-way street.","No traffic is visible in either direction."],
     "answer": 0,
     "explain": "A left turn against a red light is allowed only from a one-way street onto a one-way street, unless a sign prohibits it. Yield to traffic and pedestrians with a green light.",
     "ref": "Section 6: Left Turn Against a Red Light"
@@ -821,7 +839,7 @@ const QUESTION_BANK =
     "id": "TRN-11",
     "topic": "turns",
     "q": "When turning left from a two-way street onto another two-way street, you should start and end the turn:",
-    "choices": ["In the lane closest to the middle.","In any lane, ending in the right lane.","At the right edge of the road."],
+    "choices": ["In the lane closest to the middle.","In the right lane, ending in the middle.","At the right edge of the road."],
     "answer": 0,
     "explain": "Start the left turn in the lane closest to the middle of the street and end it in the left lane closest to the middle going your direction to reduce collision risk.",
     "ref": "Section 6: Examples of Turns"
@@ -830,7 +848,7 @@ const QUESTION_BANK =
     "id": "TRN-12",
     "topic": "turns",
     "q": "Where should you begin a left turn from a one-way street onto a one-way street?",
-    "choices": ["The far-left lane.","The lane closest to the right curb.","Any lane."],
+    "choices": ["The far-left lane.","The lane closest to the right curb.","The middle lane."],
     "answer": 0,
     "explain": "Start the turn from the far-left lane. Note that bicyclists can legally use the left turn lane for their left turns.",
     "ref": "Section 6: Examples of Turns"
@@ -864,8 +882,8 @@ const QUESTION_BANK =
   },
   {
     "id": "TRN-16",
-    "topic": "turns",
     "drills": ["numbers"],
+    "topic": "turns",
     "q": "You may make a U-turn in a residential district when:",
     "choices": ["No vehicles are approaching within 200 feet.","No vehicles are approaching within 50 feet.","You are within one block of your home."],
     "answer": 0,
@@ -883,8 +901,8 @@ const QUESTION_BANK =
   },
   {
     "id": "TRN-18",
-    "topic": "turns",
     "drills": ["numbers"],
+    "topic": "turns",
     "q": "Making a U-turn when you cannot see clearly in each direction is prohibited unless you can see at least:",
     "choices": ["200 feet each way.","100 feet each way.","500 feet each way."],
     "answer": 0,
@@ -940,7 +958,7 @@ const QUESTION_BANK =
     "id": "TRN-24",
     "topic": "turns",
     "q": "Before making a right turn at an intersection, look both ways in this order:",
-    "choices": ["Left-right-left, then turn when safe.","Right-left-right, then turn immediately.","Straight ahead only."],
+    "choices": ["Left-right-left, then turn when safe.","Right-left-right, then turn immediately.","Straight ahead, then turn."],
     "answer": 0,
     "explain": "After stopping behind the limit line, look left-right-left and turn when it is safe.",
     "ref": "Section 6: Right Turns"
@@ -985,7 +1003,7 @@ const QUESTION_BANK =
     "id": "TRN-29",
     "topic": "turns",
     "q": "Before turning left into a two-way center left turn lane, you should respect the right-of-way of:",
-    "choices": ["Anyone already in the lane.","Only vehicles longer than yours.","No one; the first to signal owns it."],
+    "choices": ["Anyone already in the lane.","Vehicles longer than yours.","No one; the first to signal owns it."],
     "answer": 0,
     "explain": "Enter a two-way center left turn lane within 200 feet of your turn and respect the right-of-way of anyone already in the lane. Always yield to pedestrians.",
     "ref": "Section 6: Left Turns"
@@ -1019,8 +1037,8 @@ const QUESTION_BANK =
   },
   {
     "id": "PRK-03",
-    "topic": "parking",
     "drills": ["numbers"],
+    "topic": "parking",
     "q": "When you finish parallel parking, your vehicle should be within what distance of the curb?",
     "choices": ["18 inches.","36 inches.","6 inches."],
     "answer": 0,
@@ -1049,7 +1067,7 @@ const QUESTION_BANK =
     "id": "PRK-06",
     "topic": "parking",
     "q": "You are parking on a hill where there is no curb. Turn your front wheels:",
-    "choices": ["Toward the shoulder.","Toward the center of the road.","In any direction if the brake is set."],
+    "choices": ["Toward the shoulder.","Toward the center of the road.","Straight, if the brake is set."],
     "answer": 0,
     "explain": "With no curb, uphill or downhill, turn the wheels to the right toward the shoulder so the vehicle rolls away from the center of the road if the brakes fail.",
     "ref": "Section 6: Parking on a Hill"
@@ -1076,7 +1094,7 @@ const QUESTION_BANK =
     "id": "PRK-09",
     "topic": "parking",
     "q": "A curb painted green means:",
-    "choices": ["Park for a limited time.","Parking for zero-emission vehicles only.","Loading zone for freight only."],
+    "choices": ["Park for a limited time.","Parking for zero-emission vehicles.","Loading zone for freight."],
     "answer": 0,
     "explain": "Green curb: park for a limited time; the limit may be posted on a sign or painted on the curb.",
     "ref": "Section 6: Parking at Colored Curbs"
@@ -1085,7 +1103,7 @@ const QUESTION_BANK =
     "id": "PRK-10",
     "topic": "parking",
     "q": "A curb painted yellow means:",
-    "choices": ["Load and unload passengers or freight.","Free parking for motorcycles only.","Reserved for taxis at all times."],
+    "choices": ["Load and unload passengers or freight.","Free parking for motorcycles.","Reserved for taxis."],
     "answer": 0,
     "explain": "Yellow curb: load and unload passengers and freight for no longer than the posted time. Noncommercial drivers usually must stay with the vehicle.",
     "ref": "Section 6: Parking at Colored Curbs"
@@ -1094,7 +1112,7 @@ const QUESTION_BANK =
     "id": "PRK-11",
     "topic": "parking",
     "q": "A curb painted red means:",
-    "choices": ["No stopping, standing, or parking.","Reserved for emergency vehicles only.","Passenger loading for three minutes."],
+    "choices": ["No stopping, standing, or parking.","Reserved for emergency vehicles.","Passenger loading for three minutes."],
     "answer": 0,
     "explain": "Red curb: no stopping, standing, or parking. Buses may stop at a red zone marked for buses only.",
     "ref": "Section 6: Parking at Colored Curbs"
@@ -1119,8 +1137,8 @@ const QUESTION_BANK =
   },
   {
     "id": "PRK-14",
-    "topic": "parking",
     "drills": ["numbers"],
+    "topic": "parking",
     "q": "You may not park within what distance of a fire hydrant?",
     "choices": ["15 feet.","5 feet.","25 feet."],
     "answer": 0,
@@ -1129,8 +1147,8 @@ const QUESTION_BANK =
   },
   {
     "id": "PRK-15",
-    "topic": "parking",
     "drills": ["numbers"],
+    "topic": "parking",
     "q": "You may not park within what distance of a marked or unmarked crosswalk?",
     "choices": ["20 feet.","10 feet.","50 feet."],
     "answer": 0,
@@ -1175,8 +1193,8 @@ const QUESTION_BANK =
   },
   {
     "id": "PRK-20",
-    "topic": "parking",
     "drills": ["numbers"],
+    "topic": "parking",
     "q": "A vehicle stopped, parked, or left standing on a freeway may be removed after:",
     "choices": ["Four hours.","24 hours.","72 hours."],
     "answer": 0,
@@ -1196,7 +1214,7 @@ const QUESTION_BANK =
     "id": "PRK-22",
     "topic": "parking",
     "q": "Parking between a safety zone and the curb is:",
-    "choices": ["Illegal.","Legal for under five minutes.","Legal for loading only."],
+    "choices": ["Illegal.","Legal for under five minutes.","Legal for loading."],
     "answer": 0,
     "explain": "Never park or leave your vehicle between a safety zone and the curb.",
     "ref": "Section 6: Illegal Parking"
@@ -1223,7 +1241,7 @@ const QUESTION_BANK =
     "id": "PRK-25",
     "topic": "parking",
     "q": "When backing up in a straight line along a curb, you should:",
-    "choices": ["Back slowly within three feet of the curb.","Back as quickly as possible to clear traffic.","Use only your mirrors and never look back."],
+    "choices": ["Back slowly within three feet of the curb.","Back as quickly as possible to clear traffic.","Use your mirrors instead of looking back."],
     "answer": 0,
     "explain": "Back in a straight line at a smooth, safe speed, remaining within three feet of the curb, and stay aware of what is behind you.",
     "ref": "Section 6: Straight Line Backing"
@@ -1275,8 +1293,8 @@ const QUESTION_BANK =
   },
   {
     "id": "MRG-03",
-    "topic": "merging-passing",
     "drills": ["numbers"],
+    "topic": "merging-passing",
     "q": "To merge, enter, or cross city street traffic from a full stop, you need a gap of about:",
     "choices": ["About 150 feet.","About two car lengths.","About 300 feet."],
     "answer": 0,
@@ -1285,8 +1303,8 @@ const QUESTION_BANK =
   },
   {
     "id": "MRG-04",
-    "topic": "merging-passing",
     "drills": ["numbers"],
+    "topic": "merging-passing",
     "q": "To enter highway traffic from a full stop, you need a gap of about:",
     "choices": ["About 300 feet.","About 150 feet.","About 50 feet."],
     "answer": 0,
@@ -1295,10 +1313,10 @@ const QUESTION_BANK =
   },
   {
     "id": "MRG-05",
-    "topic": "merging-passing",
     "drills": ["numbers"],
+    "topic": "merging-passing",
     "q": "When exiting a highway, once you are in the proper lane you should signal:",
-    "choices": ["Five seconds before you exit.","One second before the exit ramp.","Only if other vehicles are behind you."],
+    "choices": ["Five seconds before you exit.","One second before the exit ramp.","If other vehicles are behind you."],
     "answer": 0,
     "explain": "Know your exit, change lanes one at a time, and signal five seconds (about 400 feet) before you exit at a safe speed.",
     "ref": "Section 6: Exiting"
@@ -1307,15 +1325,15 @@ const QUESTION_BANK =
     "id": "MRG-06",
     "topic": "merging-passing",
     "q": "If you need to cross several freeway lanes, you should:",
-    "choices": ["Signal and cross them one at a time.","Cross them all at once to save time.","Wait for traffic to clear in all lanes."],
+    "choices": ["Signal and cross them one at a time.","Cross them in one continuous move.","Wait for traffic to clear ahead."],
     "answer": 0,
     "explain": "Cross lanes one at a time, signaling and checking blind spots for vehicles, motorcyclists, bicyclists, and pedestrians each time.",
     "ref": "Section 6: Merging"
   },
   {
     "id": "MRG-07",
-    "topic": "merging-passing",
     "drills": ["numbers"],
+    "topic": "merging-passing",
     "q": "To pass safely when approaching a hill or curve, the hill or curve should be at least how far ahead?",
     "choices": ["One-third of a mile.","One hundred feet.","One full mile."],
     "answer": 0,
@@ -1324,8 +1342,8 @@ const QUESTION_BANK =
   },
   {
     "id": "MRG-08",
-    "topic": "merging-passing",
     "drills": ["numbers"],
+    "topic": "merging-passing",
     "q": "Do not pass within what distance of an intersection, bridge, tunnel, or railroad crossing?",
     "choices": ["100 feet.","50 feet.","300 feet."],
     "answer": 0,
@@ -1354,7 +1372,7 @@ const QUESTION_BANK =
     "id": "MRG-11",
     "topic": "merging-passing",
     "q": "The driver ahead of you is signaling a left turn. You should never pass them:",
-    "choices": ["On the left.","On the right, even when safe.","In any lane at any time."],
+    "choices": ["On the left.","On the right, even when safe.","From directly behind them."],
     "answer": 0,
     "explain": "Never pass on the left if the driver is signaling a left turn. You may pass safely on the right in that situation.",
     "ref": "Section 6: How to Pass"
@@ -1460,18 +1478,18 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-01",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A solid red traffic signal light means:",
-    "choices": ["Stop, then turn right if it is safe.","Stop only if cross traffic is present.","Slow down and proceed with caution."],
+    "choices": ["Stop, then turn right if it is safe.","Stop if cross traffic is present.","Slow down and proceed with caution."],
     "answer": 0,
     "explain": "A solid red light means STOP. You may turn right at a red light only after a complete stop, when safe, and when no NO TURN ON RED sign is posted.",
     "ref": "Section 7: Solid Red Light"
   },
   {
     "id": "SIG-02",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A red arrow pointing right means:",
     "choices": ["Stop and wait for a green signal.","Turn right after yielding to traffic.","Turn right after a complete stop."],
     "answer": 0,
@@ -1480,8 +1498,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-03",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A flashing red traffic signal light means:",
     "choices": ["Stop, then go when it is safe.","The signal is broken; drive through.","Slow down without coming to a stop."],
     "answer": 0,
@@ -1490,18 +1508,18 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-04",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "You are approaching an intersection and the light turns solid yellow. You should:",
-    "choices": ["Stop if you can do so safely.","Stop in every case before the line.","Speed up to clear the intersection."],
+    "choices": ["Stop if you can do so safely.","Stop before the line regardless.","Speed up to clear the intersection."],
     "answer": 0,
     "explain": "A yellow light means CAUTION: the light is about to turn red. Stop if you can do so safely; otherwise cross the intersection cautiously.",
     "ref": "Section 7: Solid Yellow Light"
   },
   {
     "id": "SIG-05",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A yellow arrow means:",
     "choices": ["The protected turning time is ending.","You now have a protected turn.","Turns are prohibited from this lane."],
     "answer": 0,
@@ -1510,8 +1528,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-06",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A flashing yellow traffic signal light means:",
     "choices": ["Slow down and proceed with caution.","Stop and wait for it to turn green.","The light is about to turn red."],
     "answer": 0,
@@ -1520,8 +1538,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-07",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A flashing yellow arrow for a left turn means:",
     "choices": ["You may turn after yielding.","Your turn is protected from traffic.","Left turns are prohibited here."],
     "answer": 0,
@@ -1530,8 +1548,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-08",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "At a green light, you should still:",
     "choices": ["Yield to anyone still in the intersection.","Go immediately, since green means clear.","Honk to clear the intersection first."],
     "answer": 0,
@@ -1540,18 +1558,18 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-09",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A green arrow means:",
-    "choices": ["Make a protected turn in that direction.","Turn only after yielding to oncoming cars.","The lane ahead of you is closed."],
+    "choices": ["Make a protected turn in that direction.","Turn after yielding to oncoming cars.","The lane ahead of you is closed."],
     "answer": 0,
     "explain": "A green arrow allows a protected turn in the direction the arrow points; oncoming vehicles are stopped by a red light.",
     "ref": "Section 7: Green Arrow"
   },
   {
     "id": "SIG-10",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "You approach an intersection where the traffic lights are not working. You should:",
     "choices": ["Treat it as an all-way stop.","Proceed at normal speed through it.","Yield only to traffic on your left."],
     "answer": 0,
@@ -1560,8 +1578,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-11",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "A flashing DON'T WALK or flashing raised hand signal means pedestrians:",
     "choices": ["Should not start crossing the street.","Must run to finish crossing safely.","May begin crossing if they hurry."],
     "answer": 0,
@@ -1570,8 +1588,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-12",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "The numbers counting down on a pedestrian signal show:",
     "choices": ["The seconds left for crossing the street.","The speed limit at the intersection.","How long the green light will last for cars."],
     "answer": 0,
@@ -1580,8 +1598,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-13",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "Beeping, chirping, or verbal messages at a crosswalk are there to:",
     "choices": ["Help blind pedestrians cross.","Warn drivers the signal is changing.","Signal that the crosswalk is closed."],
     "answer": 0,
@@ -1590,8 +1608,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-14",
-    "topic": "signals-signs",
     "drills": ["signals"],
+    "topic": "signals-signs",
     "q": "If an intersection has no pedestrian signals, pedestrians should:",
     "choices": ["Obey the vehicle traffic signals.","Cross whenever there is a gap.","Wait for a police officer."],
     "answer": 0,
@@ -1600,19 +1618,19 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-15",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "stop",
     "q": "This eight-sided red sign means:",
-    "choices": ["Make a full stop, then check traffic.","Slow down and proceed if it is clear.","Stop only when other vehicles are near."],
+    "choices": ["Make a full stop, then check traffic.","Slow down and proceed if it is clear.","Stop when other vehicles are near."],
     "answer": 0,
     "explain": "A STOP sign always requires a full stop at the limit line or crosswalk (or before the intersection if there is neither), then check traffic in all directions before proceeding.",
     "ref": "Section 7: STOP Sign"
   },
   {
     "id": "SIG-16",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "yield",
     "q": "This red and white triangular sign means:",
     "choices": ["Slow down and be ready to stop.","Come to a complete stop in all cases.","You have the right-of-way over traffic."],
@@ -1622,8 +1640,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-17",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "rr",
     "q": "This round yellow sign with an X and the letters R R means:",
     "choices": ["A railroad crossing is ahead.","A four-way intersection is ahead.","Road repairs are in progress ahead."],
@@ -1633,8 +1651,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-18",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "school",
     "q": "This five-sided sign means:",
     "choices": ["You are near a school.","A hospital zone is ahead.","You are entering a construction zone."],
@@ -1644,8 +1662,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-19",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "warning",
     "q": "Diamond-shaped yellow signs are used to:",
     "choices": ["Warn of road conditions ahead.","List traffic laws you must obey.","Give distances to the next town."],
@@ -1655,8 +1673,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-20",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "q": "White rectangular signs:",
     "choices": ["Communicate rules you must obey.","Are only friendly suggestions.","Mark scenic routes and detours."],
     "answer": 0,
@@ -1665,8 +1683,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-21",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "dne",
     "q": "This sign, a red circle with a white horizontal bar, means:",
     "choices": ["Do not enter this road or ramp.","No parking beyond this point.","The road ends a short way ahead."],
@@ -1676,8 +1694,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-22",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "wrongway",
     "q": "You see this red WRONG WAY sign facing you as you enter a road. You should:",
     "choices": ["Back out or turn around when safe.","Continue slowly to the next exit.","Turn on your flashers and continue."],
@@ -1687,8 +1705,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-23",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "q": "Driving at night, you notice the road reflectors shining RED in your headlights. This means:",
     "choices": ["You are going the wrong way.","A school zone is ahead.","The pavement is wet."],
     "answer": 0,
@@ -1697,8 +1715,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-24",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "q": "A sign showing a picture inside a red circle with a red line through it means:",
     "choices": ["The pictured action is not allowed.","The pictured action is required.","The pictured hazard is ahead."],
     "answer": 0,
@@ -1707,8 +1725,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-25",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "slowmoving",
     "q": "An orange and red triangle displayed on the back of a vehicle means it is:",
     "choices": ["A slow-moving vehicle.","A vehicle carrying hazardous materials.","An emergency vehicle on a call."],
@@ -1718,8 +1736,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-26",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "q": "A diamond-shaped placard on a truck means:",
     "choices": ["The load may be dangerous.","The truck is oversized or overweight.","The truck is a slow-moving vehicle."],
     "answer": 0,
@@ -1728,8 +1746,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-27",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "slippery",
     "q": "This yellow warning sign showing a car with wavy skid marks means:",
     "choices": ["The road may be slippery when wet.","The road curves sharply ahead.","Loose gravel is on the roadway."],
@@ -1739,8 +1757,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-28",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "merge",
     "q": "This yellow warning sign means:",
     "choices": ["Traffic is merging ahead.","The road divides ahead.","A sharp curve is ahead."],
@@ -1750,8 +1768,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-29",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "signalahead",
     "q": "This yellow warning sign showing a traffic signal means:",
     "choices": ["A traffic signal is ahead.","The signal ahead is broken.","You must turn at the signal."],
@@ -1761,8 +1779,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-30",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "laneends",
     "q": "You see this yellow warning sign posted along the road. It tells you:",
     "choices": ["Your lane ends ahead.","A one-way road begins.","The shoulder is soft."],
@@ -1772,8 +1790,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-31",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "dividedhwy",
     "q": "This diamond-shaped yellow sign is warning you that:",
     "choices": ["A divided highway is ahead.","A winding road is ahead.","Two lanes become four ahead."],
@@ -1783,8 +1801,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-32",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "sign": "pedestrian",
     "q": "This yellow sign showing a person walking means:",
     "choices": ["Watch for pedestrians crossing.","The sidewalk is closed ahead.","Hitchhiking is allowed here."],
@@ -1794,8 +1812,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-33",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "q": "You should obey warning signs:",
     "choices": ["Regardless of their shape or color.","Only when they are yellow.","Only during daylight hours."],
     "answer": 0,
@@ -1804,8 +1822,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SIG-34",
-    "topic": "signals-signs",
     "drills": ["signs"],
+    "topic": "signals-signs",
     "q": "Many railroad crossings have a blue and white sign posted. It tells you:",
     "choices": ["What to do in an emergency on the tracks.","The train schedule for that crossing.","The speed limit for passing trains."],
     "answer": 0,
@@ -1976,8 +1994,8 @@ const QUESTION_BANK =
   },
   {
     "id": "ROW-19",
-    "topic": "right-of-way",
     "drills": ["numbers"],
+    "topic": "right-of-way",
     "q": "Following within what distance of an emergency vehicle with its siren or flashing lights on is illegal?",
     "choices": ["300 feet.","100 feet.","500 feet."],
     "answer": 0,
@@ -2048,6 +2066,15 @@ const QUESTION_BANK =
     "ref": "Section 7: Pedestrians"
   },
   {
+    "id": "ROW-27",
+    "topic": "right-of-way",
+    "q": "A person using a wheelchair has entered the crosswalk ahead of you. You should:",
+    "choices": ["Remain stopped until they finish crossing.","Proceed once they pass your side of the road.","Edge forward to show that you are waiting."],
+    "answer": 0,
+    "explain": "A person with a disability using a wheelchair is a pedestrian. When a pedestrian is crossing, use caution, reduce your speed, or stop to let them safely finish crossing, and allow extra time for those who need it.",
+    "ref": "Section 7: Pedestrians"
+  },
+  {
     "id": "SHR-01",
     "topic": "sharing-road",
     "q": "Which of the following is true about large trucks?",
@@ -2067,8 +2094,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SHR-03",
-    "topic": "sharing-road",
     "drills": ["numbers"],
+    "topic": "sharing-road",
     "q": "A passenger vehicle traveling at 55 mph can stop within about 300 feet. A large truck at the same speed can take up to:",
     "choices": ["400 feet.","300 feet.","200 feet."],
     "answer": 0,
@@ -2122,8 +2149,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SHR-09",
-    "topic": "sharing-road",
     "drills": ["numbers"],
+    "topic": "sharing-road",
     "q": "A streetcar is stopped at a safety zone where a pedestrian is boarding. You may pass at no more than:",
     "choices": ["10 mph.","25 mph.","15 mph."],
     "answer": 0,
@@ -2177,8 +2204,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SHR-15",
-    "topic": "sharing-road",
     "drills": ["numbers"],
+    "topic": "sharing-road",
     "q": "Neighborhood electric vehicles (NEVs) and low-speed vehicles (LSVs) reach a maximum speed of 25 mph and are restricted from roads with speed limits greater than:",
     "choices": ["35 mph.","45 mph.","55 mph."],
     "answer": 0,
@@ -2214,8 +2241,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SHR-19",
-    "topic": "sharing-road",
     "drills": ["numbers"],
+    "topic": "sharing-road",
     "q": "A bicyclist riding at night must have a front lamp with a white light visible from:",
     "choices": ["300 feet.","100 feet.","50 feet."],
     "answer": 0,
@@ -2260,8 +2287,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SHR-24",
-    "topic": "sharing-road",
     "drills": ["numbers"],
+    "topic": "sharing-road",
     "q": "Fines for traffic violations in a highway construction or maintenance zone when workers are present are:",
     "choices": ["Doubled, and can be $1,000 or more.","The same as normal.","Waived for first offenses."],
     "answer": 0,
@@ -2270,8 +2297,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SHR-25",
-    "topic": "sharing-road",
     "drills": ["numbers"],
+    "topic": "sharing-road",
     "q": "Anyone convicted of assaulting a highway worker faces:",
     "choices": ["Fines up to $2,000 and up to a year in jail.","A written warning from the officer.","A fine of $100 for a first offense."],
     "answer": 0,
@@ -2334,8 +2361,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SHR-32",
-    "topic": "sharing-road",
     "drills": ["numbers"],
+    "topic": "sharing-road",
     "q": "When crossing devices or a person warns a train is coming, stop at least how far from the nearest track?",
     "choices": ["15 feet.","5 feet.","50 feet."],
     "answer": 0,
@@ -2371,8 +2398,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-02",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "Unless otherwise posted, the maximum speed limit on most California highways is:",
     "choices": ["65 mph.","70 mph.","55 mph."],
     "answer": 0,
@@ -2381,8 +2408,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-03",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "Unless otherwise posted, the speed limit on a two-lane undivided highway is:",
     "choices": ["55 mph.","65 mph.","45 mph."],
     "answer": 0,
@@ -2391,8 +2418,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-04",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "Unless otherwise posted, the speed limit in business or residential districts is:",
     "choices": ["25 mph.","35 mph.","15 mph."],
     "answer": 0,
@@ -2401,8 +2428,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-05",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "The speed limit within 500 feet of a school while children are outside or crossing the street is:",
     "choices": ["25 mph.","35 mph.","20 mph."],
     "answer": 0,
@@ -2411,8 +2438,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-06",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "The speed limit at a blind intersection (no stop signs at any corner and limited view) is:",
     "choices": ["15 mph.","25 mph.","10 mph."],
     "answer": 0,
@@ -2421,8 +2448,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-07",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "The speed limit in an alley is:",
     "choices": ["15 mph.","25 mph.","20 mph."],
     "answer": 0,
@@ -2431,8 +2458,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-08",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "Within 100 feet of a railroad crossing where you cannot see the tracks for 400 feet in both directions, the speed limit is:",
     "choices": ["15 mph.","25 mph.","10 mph."],
     "answer": 0,
@@ -2441,8 +2468,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-09",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "On a wet road, you should reduce your speed by about:",
     "choices": ["By 5 to 10 mph.","By 20 to 25 mph.","By half your speed."],
     "answer": 0,
@@ -2451,8 +2478,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-10",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "On packed snow, you should reduce your speed:",
     "choices": ["By half.","By 5 mph.","By one quarter."],
     "answer": 0,
@@ -2461,8 +2488,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-11",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "On ice, you should reduce your speed to:",
     "choices": ["No more than 5 mph.","No more than 25 mph.","No more than 45 mph."],
     "answer": 0,
@@ -2471,8 +2498,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-12",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "In a heavy rainstorm or snowstorm, if you cannot see farther than 100 feet, it is not safe to drive faster than:",
     "choices": ["30 mph.","45 mph.","20 mph."],
     "answer": 0,
@@ -2508,8 +2535,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-16",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "When towing a trailer on a California highway, the maximum speed limit is:",
     "choices": ["55 mph.","65 mph.","45 mph."],
     "answer": 0,
@@ -2554,8 +2581,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-21",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "An alley is defined as a road no wider than:",
     "choices": ["25 feet.","40 feet.","15 feet."],
     "answer": 0,
@@ -2582,8 +2609,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SPD-24",
-    "topic": "speed",
     "drills": ["numbers"],
+    "topic": "speed",
     "q": "You approach a blind intersection where your view is blocked. You should:",
     "choices": ["Move forward slowly until you can see.","Stop completely before entering it.","Proceed at the posted speed limit."],
     "answer": 0,
@@ -2592,8 +2619,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SAF-01",
-    "topic": "safe-driving",
     "drills": ["numbers"],
+    "topic": "safe-driving",
     "q": "To give yourself time to react and avoid hazards, scan the road at least how far ahead of your vehicle?",
     "choices": ["10 seconds.","3 seconds.","1 second."],
     "answer": 0,
@@ -2872,8 +2899,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SAF-32",
-    "topic": "safe-driving",
     "drills": ["numbers"],
+    "topic": "safe-driving",
     "q": "A child may use a regular safety belt (instead of a child restraint) once they are:",
     "choices": ["8 years old or 4 feet 9 inches tall.","6 years old or 4 feet tall.","Tall enough to see out the window."],
     "answer": 0,
@@ -2882,8 +2909,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SAF-33",
-    "topic": "safe-driving",
     "drills": ["numbers"],
+    "topic": "safe-driving",
     "q": "You should sit at least how far from the steering wheel's airbag cover?",
     "choices": ["10 inches.","4 inches.","20 inches."],
     "answer": 0,
@@ -2892,8 +2919,8 @@ const QUESTION_BANK =
   },
   {
     "id": "SAF-34",
-    "topic": "safe-driving",
     "drills": ["numbers"],
+    "topic": "safe-driving",
     "q": "It is illegal to leave a child unattended in a vehicle if the child is:",
     "choices": ["Six years old or younger.","Under 10 years old, in all cases.","Any age, if the windows are up."],
     "answer": 0,
@@ -3009,6 +3036,15 @@ const QUESTION_BANK =
     "ref": "Section 8: Know What Is at Your Side"
   },
   {
+    "id": "SAF-47",
+    "topic": "safe-driving",
+    "q": "Your vehicle stops running on a freeway during commute hours. The CHP Freeway Service Patrol will:",
+    "choices": ["Provide basic roadside help at no charge.","Charge a flat fee for roadside help.","Tow you if you belong to an auto club."],
+    "answer": 0,
+    "explain": "During commute times the CHP Freeway Service Patrol provides free emergency roadside service in certain areas. It will provide a gallon of gas, jump start a dead battery, refill a radiator and tape hoses, change a flat tire, and report a collision. If it cannot start your vehicle it will tow it free of charge to a CHP-approved location.",
+    "ref": "Section 8: California Highway Patrol (CHP) Freeway Service Patrol (FSP)"
+  },
+  {
     "id": "DUI-01",
     "topic": "alcohol-drugs",
     "q": "California's DUI laws apply to:",
@@ -3019,8 +3055,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-02",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "It is illegal for a driver 21 or older to drive with a blood alcohol concentration (BAC) of:",
     "choices": ["0.08% or higher.","0.05% or higher.","0.10% or higher."],
     "answer": 0,
@@ -3029,8 +3065,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-03",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "For drivers under 21, it is illegal to drive with a BAC of:",
     "choices": ["0.01% or higher.","0.05% or higher.","0.08% or higher."],
     "answer": 0,
@@ -3039,8 +3075,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-04",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "For a driver operating a vehicle that requires a commercial driver's license, the BAC limit is:",
     "choices": ["0.04%.","0.08%.","0.01%."],
     "answer": 0,
@@ -3094,8 +3130,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-10",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "If you are arrested for DUI, the officer may take your driver's license and issue you a temporary license valid for:",
     "choices": ["30 days.","10 days.","90 days."],
     "answer": 0,
@@ -3104,8 +3140,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-11",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "After a DUI arrest, how long do you have to request a DMV administrative hearing?",
     "choices": ["10 days from the date of your arrest.","30 days from your court date.","One year."],
     "answer": 0,
@@ -3132,8 +3168,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-14",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "A DUI conviction stays on your driver's record for:",
     "choices": ["10 years.","3 years.","5 years."],
     "answer": 0,
@@ -3151,8 +3187,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-16",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "A driver under 21 caught with alcohol in their vehicle may have the vehicle impounded for up to:",
     "choices": ["30 days.","10 days.","6 months."],
     "answer": 0,
@@ -3179,8 +3215,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-19",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "According to the handbook's BAC information, one drink equals:",
     "choices": ["12 oz of 5% beer.","Any glass of alcohol.","8 oz of any type of beer."],
     "answer": 0,
@@ -3234,8 +3270,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-25",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "The BAC table subtracts how much for each 40 minutes that lapse between drinks?",
     "choices": ["0.01%.","0.05%.","0.10%."],
     "answer": 0,
@@ -3244,8 +3280,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-26",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "For a driver transporting a passenger for hire (such as a rideshare driver with a passenger), the BAC limit is:",
     "choices": ["0.04%.","0.08%.","0.06%."],
     "answer": 0,
@@ -3254,8 +3290,8 @@ const QUESTION_BANK =
   },
   {
     "id": "DUI-27",
-    "topic": "alcohol-drugs",
     "drills": ["numbers"],
+    "topic": "alcohol-drugs",
     "q": "A driver on DUI probation may not drive with a BAC of:",
     "choices": ["0.01% or higher.","0.04% or higher.","0.08% or higher."],
     "answer": 0,
@@ -3273,8 +3309,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-01",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "As an adult, your license may be suspended if your record shows:",
     "choices": ["4 points in 12 months.","2 points in any one year.","10 points in five years."],
     "answer": 0,
@@ -3283,8 +3319,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-02",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "Traffic convictions and collisions stay on your driving record for:",
     "choices": ["36 months or longer.","12 months in all cases.","24 months in all cases."],
     "answer": 0,
@@ -3293,8 +3329,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-03",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "How often can you attend traffic violator school to keep a one-point citation from being reported to your insurance company?",
     "choices": ["Once in any 18-month period.","Once per year.","As often as a judge allows."],
     "answer": 0,
@@ -3339,8 +3375,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-08",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "A driver who willfully flees law enforcement, and during the pursuit someone is seriously injured, is subject to:",
     "choices": ["Up to seven years in state prison.","A fine of less than $1,000.","An anger-management class."],
     "answer": 0,
@@ -3349,8 +3385,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-09",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "A person convicted of manslaughter resulting from evading law enforcement faces state prison for:",
     "choices": ["Four to ten years.","Up to one year.","Exactly two years."],
     "answer": 0,
@@ -3359,8 +3395,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-10",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "If an unlicensed person is caught driving your vehicle, the vehicle may be:",
     "choices": ["Impounded for 30 days.","Sold at auction immediately.","Ticketed but not impounded."],
     "answer": 0,
@@ -3369,8 +3405,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-11",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "A minor with TWO at-fault collisions or traffic convictions (or one of each) in the first 12 months:",
     "choices": ["Cannot drive alone for 30 days.","Loses their license permanently.","Gets a written warning letter."],
     "answer": 0,
@@ -3379,8 +3415,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-12",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "A minor with THREE at-fault collisions or traffic convictions faces:",
     "choices": ["A six-month suspension.","A 30-day driving restriction.","A larger fine, but no suspension."],
     "answer": 0,
@@ -3398,8 +3434,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REC-14",
-    "topic": "records-penalties",
     "drills": ["numbers"],
+    "topic": "records-penalties",
     "q": "You received notice that DMV proposes action against your driving privilege, served to you in person. To keep your hearing rights, request a hearing within:",
     "choices": ["10 days of being served.","30 days in all cases.","48 hours of being served."],
     "answer": 0,
@@ -3479,9 +3515,18 @@ const QUESTION_BANK =
     "ref": "Section 7: Points on Your Driver's Record"
   },
   {
+    "id": "REC-23",
+    "topic": "records-penalties",
+    "q": "At a DMV administrative hearing, you have the right to:",
+    "choices": ["Present evidence and question witnesses.","Have an attorney provided at no cost.","Delay the hearing until charges are filed."],
+    "answer": 0,
+    "explain": "At an administrative hearing you may present relevant evidence and witnesses, testify on your own behalf, and review the evidence and cross examine testimony. You may be represented by an attorney or other representative at your own expense, but representation is not required.",
+    "ref": "Section 7: Your Hearing Rights"
+  },
+  {
     "id": "INS-01",
-    "topic": "insurance-collisions",
     "drills": ["numbers"],
+    "topic": "insurance-collisions",
     "q": "California's minimum liability insurance must cover at least how much for a single death or injury?",
     "choices": ["$30,000.","$15,000.","$5,000."],
     "answer": 0,
@@ -3490,8 +3535,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INS-02",
-    "topic": "insurance-collisions",
     "drills": ["numbers"],
+    "topic": "insurance-collisions",
     "q": "California's minimum insurance coverage for property damage is:",
     "choices": ["$15,000.","$30,000.","$60,000."],
     "answer": 0,
@@ -3500,8 +3545,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INS-03",
-    "topic": "insurance-collisions",
     "drills": ["numbers"],
+    "topic": "insurance-collisions",
     "q": "You are in a collision while driving without insurance. Your driving privilege will be suspended:",
     "choices": ["For up to four years.","Only if you caused it.","For thirty days."],
     "answer": 0,
@@ -3530,7 +3575,7 @@ const QUESTION_BANK =
     "id": "INS-06",
     "topic": "insurance-collisions",
     "q": "What is one of the most common causes of traffic collisions?",
-    "choices": ["Driver distractions.","Driving below the speed limit.","Using turn signals too early."],
+    "choices": ["Driver distractions.","Paying attention to your surroundings.","Better traffic flow."],
     "answer": 0,
     "explain": "The most common causes of collisions include driver distractions, unsafe speed, improper turns, right-of-way violations, ignoring signs, and driving on the wrong side of the road.",
     "ref": "Section 10: Causes of Collisions"
@@ -3555,8 +3600,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INS-09",
-    "topic": "insurance-collisions",
     "drills": ["numbers"],
+    "topic": "insurance-collisions",
     "q": "If anyone is injured or killed in a collision, you must report it to law enforcement within:",
     "choices": ["24 hours.","10 days.","72 hours."],
     "answer": 0,
@@ -3565,8 +3610,8 @@ const QUESTION_BANK =
   },
   {
     "id": "INS-10",
-    "topic": "insurance-collisions",
     "drills": ["numbers"],
+    "topic": "insurance-collisions",
     "q": "You must file a Report of Traffic Accident (SR 1) with DMV within 10 days if the collision caused:",
     "choices": ["More than $1,000 in damage.","More than $500 in damage.","Damage to your vehicle only."],
     "answer": 0,
@@ -3647,8 +3692,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REG-01",
-    "topic": "registration",
     "drills": ["numbers"],
+    "topic": "registration",
     "q": "When you buy a vehicle, you have how many days to transfer ownership to your name?",
     "choices": ["10 days.","5 days.","30 days."],
     "answer": 0,
@@ -3657,8 +3702,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REG-02",
-    "topic": "registration",
     "drills": ["numbers"],
+    "topic": "registration",
     "q": "You must notify DMV within 5 days if you:",
     "choices": ["Sell or transfer ownership of your vehicle.","Paint your vehicle a different color.","Receive a traffic violation."],
     "answer": 0,
@@ -3667,8 +3712,8 @@ const QUESTION_BANK =
   },
   {
     "id": "REG-03",
-    "topic": "registration",
     "drills": ["numbers"],
+    "topic": "registration",
     "q": "After becoming a California resident or getting a job in California, you must register your out-of-state vehicle within:",
     "choices": ["20 days.","10 days.","6 months."],
     "answer": 0,
@@ -3776,8 +3821,8 @@ const QUESTION_BANK =
   },
   {
     "id": "MSC-09",
-    "topic": "vehicle-misc",
     "drills": ["numbers"],
+    "topic": "vehicle-misc",
     "q": "Dumping or abandoning an animal on a highway is punishable by:",
     "choices": ["A fine of up to $1,000 or jail.","A verbal warning from an officer.","A fine of fifty dollars."],
     "answer": 0,
@@ -3786,8 +3831,8 @@ const QUESTION_BANK =
   },
   {
     "id": "MSC-10",
-    "topic": "vehicle-misc",
     "drills": ["numbers"],
+    "topic": "vehicle-misc",
     "q": "Cargo may extend beyond your vehicle's right fenders by no more than:",
     "choices": ["6 inches.","12 inches.","2 feet."],
     "answer": 0,
@@ -3796,8 +3841,8 @@ const QUESTION_BANK =
   },
   {
     "id": "MSC-11",
-    "topic": "vehicle-misc",
     "drills": ["numbers"],
+    "topic": "vehicle-misc",
     "q": "Cargo extending more than 4 feet beyond your rear bumper must display:",
     "choices": ["A red or orange square flag.","A white towel tied to the load.","A yellow triangular reflector."],
     "answer": 0,
@@ -3833,8 +3878,8 @@ const QUESTION_BANK =
   },
   {
     "id": "MSC-15",
-    "topic": "vehicle-misc",
     "drills": ["numbers"],
+    "topic": "vehicle-misc",
     "q": "An electronic toll payment device may be mounted:",
     "choices": ["At the center top of the windshield.","Anywhere on the windshield.","On the steering wheel hub."],
     "answer": 0,
@@ -3939,5 +3984,14 @@ const QUESTION_BANK =
     "answer": 0,
     "explain": "Warning signs of an unsafe driver: getting lost in familiar places; dents and scrapes on the car, fences, mailbox, or garage; frequent close calls or collisions.",
     "ref": "Section 13: Seniors and Driving"
+  },
+  {
+    "id": "MSC-27",
+    "topic": "vehicle-misc",
+    "q": "According to the handbook, progressive dementia in an older driver:",
+    "choices": ["Eventually ends the ability to drive safely.","Rarely affects the ability to drive safely.","Is corrected by the Mature Driver Program."],
+    "answer": 0,
+    "explain": "Seniors with dementia present a significant challenge to safe driving, and individuals with progressive dementia ultimately lose their ability to drive safely. It is often up to caregivers, physicians, and law enforcement to stop them from driving and arrange other transportation.",
+    "ref": "Section 13: Cognitive Impairment"
   }
 ];

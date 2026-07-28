@@ -1,4 +1,4 @@
-<h1 align="center">CA DMV Practice Test</h1>
+﻿<h1 align="center">CA DMV Practice Test</h1>
 
 <p align="center">
   Unofficial practice tests for the <strong>California Class C knowledge test</strong>,<br>
@@ -6,11 +6,11 @@
 </p>
 
 <p align="center">
-  <a href="https://diazjohnt.github.io/dmv-ca-prep/"><strong>Take a practice test →</strong></a>
+  <a href="https://diazjohnt.github.io/dmv-ca-prep/"><strong>Take a practice test â†’</strong></a>
 </p>
 
 <p align="center">
-  <img alt="422 questions" src="https://img.shields.io/badge/question_bank-422-2a78d6">
+  <img alt="428 questions" src="https://img.shields.io/badge/question_bank-428-2a78d6">
   <img alt="No build step" src="https://img.shields.io/badge/dependencies-none-2a78d6">
   <img alt="Works offline" src="https://img.shields.io/badge/offline-supported-2a78d6">
 </p>
@@ -25,12 +25,12 @@
 
 ## Features
 
-- **A fresh test every time.** Each test is drawn from a bank of 422 hand-written
+- **A fresh test every time.** Each test is drawn from a bank of 428 hand-written
   questions in the DMV's own three-choice style, balanced across all 16 handbook
   topics. Answer order is shuffled on every display, and recently seen questions
   are rotated out.
-- **One setup panel that cascades.** Pick the kind of test → the subject (if
-  focused) → how many questions → exam or study. Later steps adapt to earlier
+- **One setup panel that cascades.** Pick the kind of test â†’ the subject (if
+  focused) â†’ how many questions â†’ exam or study. Later steps adapt to earlier
   ones, so the options on screen are always valid.
 - **Standard or focused.** A **Standard** test spans every topic like the real
   exam. A **Focused subject** test drills one trouble spot: **road signs**,
@@ -43,7 +43,7 @@
 - **Exam and Study modes.** Exam gives feedback at the end, like the real thing.
   Study explains every answer the moment you pick it.
 - **The handbook teaches you.** Every question cites its handbook section, and
-  wrong answers open a *"What the handbook says"* panel with the verbatim source
+  every answer opens a *"What the handbook says"* panel with the verbatim source
   passage. Searchable against the official PDF.
 - **Progress tracking, no account.** Standard tests build a readiness trend
   against the pass bar; focused sessions stay out of that trend but feed
@@ -60,7 +60,7 @@ JavaScript, no frameworks, no build step, no server, no database.
 | Path | Purpose |
 |---|---|
 | `docs/` | The entire app, served by GitHub Pages. |
-| `docs/questions.js` | The question bank: 422 questions with explanations and handbook references. |
+| `docs/questions.js` | The question bank: 428 questions with explanations and handbook references. |
 | `docs/handbook.js` | Auto-generated verbatim handbook passages (one per referenced section). |
 | `tools/validate.ps1` | Structural checks for the question bank. |
 | `tools/logic-test.js` | Node tests for test generation, scoring, and excerpt coverage. |
@@ -82,5 +82,5 @@ current rules, see [dmv.ca.gov](https://www.dmv.ca.gov/).
 ## License
 
 Code is [MIT](LICENSE). Question and excerpt content is adapted from the
-*California Driver's Handbook*, © California DMV, under
+*California Driver's Handbook*, Â© California DMV, under
 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Non-commercial use with attribution.
