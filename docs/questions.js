@@ -630,7 +630,7 @@ const QUESTION_BANK =
     "id": "LAN-18",
     "topic": "lanes",
     "q": "You are driving slowly on a two-lane road where passing is unsafe and five or more vehicles are following you. You must:",
-    "choices": ["Use a turnout area or lane to let them pass.","Speed up to the posted limit no matter the conditions.","Wave the vehicles around your left side."],
+    "choices": ["Use a turnout area or lane.","Speed up to the posted speed limit.","Wave the vehicles around your left side."],
     "answer": 0,
     "explain": "You must use a turnout area or lane to let vehicles pass when driving slowly on a two-lane road where passing is unsafe and five or more vehicles are following.",
     "ref": "Section 6: Turnout Areas or Lanes"
@@ -1363,7 +1363,7 @@ const QUESTION_BANK =
     "id": "MRG-12",
     "topic": "merging-passing",
     "q": "Another vehicle is passing you on the left. You should:",
-    "choices": ["Maintain your lane position and speed.","Speed up so they finish passing sooner.","Pull onto the shoulder to let them by."],
+    "choices": ["Maintain your lane position and speed.","Speed up while they are alongside.","Pull onto the shoulder to let them by."],
     "answer": 0,
     "explain": "If a vehicle is passing you or signals to pass, allow it. Maintain your lane position and your speed.",
     "ref": "Section 6: Being Passed"
@@ -1381,7 +1381,7 @@ const QUESTION_BANK =
     "id": "MRG-14",
     "topic": "merging-passing",
     "q": "The correct sequence for passing on an open highway is:",
-    "choices": ["Signal, check blind spot, pass, then signal back.","Speed up first, then signal while moving over.","Move over without signaling to avoid alarm."],
+    "choices": ["Signal, check blind spot, pass, then signal back.","Check blind spot, pass, signal, then return.","Signal, pass, check blind spot, then return."],
     "answer": 0,
     "explain": "Signal your pass, check over your shoulder, move into the passing lane, speed up to pass, and signal when returning to your original lane.",
     "ref": "Section 6: How to Pass"
@@ -1493,7 +1493,7 @@ const QUESTION_BANK =
     "topic": "signals-signs",
     "drills": ["signals"],
     "q": "You are approaching an intersection and the light turns solid yellow. You should:",
-    "choices": ["Stop if you can do so safely.","Always stop, no matter what.","Speed up to beat the red light."],
+    "choices": ["Stop if you can do so safely.","Stop in every case before the line.","Speed up to clear the intersection."],
     "answer": 0,
     "explain": "A yellow light means CAUTION: the light is about to turn red. Stop if you can do so safely; otherwise cross the intersection cautiously.",
     "ref": "Section 7: Solid Yellow Light"
@@ -1861,7 +1861,7 @@ const QUESTION_BANK =
     "id": "ROW-06",
     "topic": "right-of-way",
     "q": "Before entering a roundabout, you must:",
-    "choices": ["Yield to traffic already in it.","Stop completely even when it is empty.","Speed up to merge ahead of traffic."],
+    "choices": ["Yield to traffic already in it.","Yield to traffic waiting to enter.","Stop completely even when it is empty."],
     "answer": 0,
     "explain": "Slow down as you approach and yield to all traffic already in the roundabout, entering when there is a big enough gap.",
     "ref": "Section 7: Roundabouts"
@@ -1960,7 +1960,7 @@ const QUESTION_BANK =
     "id": "ROW-17",
     "topic": "right-of-way",
     "q": "An emergency vehicle approaches you using its siren and red lights. You must:",
-    "choices": ["Pull to the right edge and stop.","Speed up and get out of the area.","Stop immediately where you are."],
+    "choices": ["Pull to the right edge and stop.","Slow down and stay in your lane.","Stop immediately where you are."],
     "answer": 0,
     "explain": "Give the right-of-way: drive to the right edge of the road and stop until the emergency vehicle(s) have passed. Failure to pull over may result in a ticket.",
     "ref": "Section 7: Emergency Vehicles"
@@ -2015,7 +2015,7 @@ const QUESTION_BANK =
     "id": "ROW-23",
     "topic": "right-of-way",
     "q": "When approaching a stationary emergency vehicle showing flashing emergency or hazard lights, you must:",
-    "choices": ["Move over and slow down.","Stop next to the emergency vehicle.","Continue at your normal speed."],
+    "choices": ["Move over and slow down.","Slow down but stay in your lane.","Come to a full stop before passing."],
     "answer": 0,
     "explain": "Move over and slow down when approaching stationary emergency vehicles, tow trucks, or road work vehicles displaying flashing or amber warning lights.",
     "ref": "Section 7: Move Over and Slow Down"
@@ -2143,7 +2143,7 @@ const QUESTION_BANK =
     "id": "SHR-11",
     "topic": "sharing-road",
     "q": "When driving near light rail vehicles, you should:",
-    "choices": ["Never turn in front of one.","Expect them to stop for you.","Race them to the intersection."],
+    "choices": ["Never turn in front of one.","Expect them to stop for you.","Assume they cannot change the signal."],
     "answer": 0,
     "explain": "Never turn in front of an approaching light rail vehicle, maintain a safe distance, and be aware they can interrupt traffic lights.",
     "ref": "Section 7: Light Rail Vehicles"
@@ -2170,7 +2170,7 @@ const QUESTION_BANK =
     "id": "SHR-14",
     "topic": "sharing-road",
     "q": "Before opening your car door next to traffic, you should check for:",
-    "choices": ["Motorcyclists and bicyclists behind you.","Parking enforcement officers nearby.","Nothing; traffic must avoid your door."],
+    "choices": ["Motorcyclists and bicyclists behind you.","Oncoming traffic in the opposite lane.","Pedestrians on the sidewalk beside you."],
     "answer": 0,
     "explain": "Check for motorcyclists (and bicyclists) before you open your door next to traffic.",
     "ref": "Section 7: Motorcycles"
@@ -2585,7 +2585,7 @@ const QUESTION_BANK =
     "topic": "speed",
     "drills": ["numbers"],
     "q": "You approach a blind intersection where your view is blocked. You should:",
-    "choices": ["Move forward slowly until you can see.","Honk and proceed at normal speed.","Stop and wait for a gap in sound."],
+    "choices": ["Move forward slowly until you can see.","Stop completely before entering it.","Proceed at the posted speed limit."],
     "answer": 0,
     "explain": "At a blind intersection, the limit is 15 mph. Move slowly forward until you can see before proceeding.",
     "ref": "Section 7: Blind Intersections"
@@ -2757,7 +2757,7 @@ const QUESTION_BANK =
     "id": "SAF-19",
     "topic": "safe-driving",
     "q": "You hear sloshing sounds from your tires in the rain. You should:",
-    "choices": ["Slow down gradually.","Speed up to push water away.","Turn on cruise control."],
+    "choices": ["Slow down gradually.","Brake firmly to regain traction.","Turn on cruise control."],
     "answer": 0,
     "explain": "Slow down if you hear sloshing from the tires, steer around standing water when possible, and slow before changing lanes or direction.",
     "ref": "Section 8: Hydroplaning"
@@ -2958,7 +2958,7 @@ const QUESTION_BANK =
     "id": "SAF-41",
     "topic": "safe-driving",
     "q": "Your engine is overheating in extreme heat. The handbook recommends:",
-    "choices": ["Turn off the air conditioner.","Turn the air conditioner to maximum.","Ignore it; engines cannot overheat."],
+    "choices": ["Turn off the air conditioner.","Turn the air conditioner to maximum.","Drive at high speed to cool the engine."],
     "answer": 0,
     "explain": "In extreme heat: watch the temperature gauge, avoid driving at high speeds for long periods, and turn off the air conditioner.",
     "ref": "Section 8: Overheating Conditions"
@@ -3086,8 +3086,8 @@ const QUESTION_BANK =
   {
     "id": "DUI-09",
     "topic": "alcohol-drugs",
-    "q": "If you refuse to take a blood or urine test when an officer suspects you of DUI:",
-    "choices": ["A one-year suspension or revocation.","Nothing, if you were not drinking.","A fine of fifty dollars."],
+    "q": "Refusing a blood or urine test when an officer suspects you of DUI leads to:",
+    "choices": ["A one-year suspension or revocation.","A thirty-day suspension of your license.","A warning on your driving record."],
     "answer": 0,
     "explain": "Refusing a chemical test leads DMV to suspend or revoke your driving privilege for one year.",
     "ref": "Section 9: Alcohol and Drugs"
@@ -3586,7 +3586,7 @@ const QUESTION_BANK =
     "id": "INS-12",
     "topic": "insurance-collisions",
     "q": "Your parked, unattended vehicle rolls into another parked car and you cannot find the owner. You must:",
-    "choices": ["Leave a note and report it.","Wait one hour, then leave.","Do nothing if no one saw it."],
+    "choices": ["Leave a note and report it.","Leave a note; no report is needed.","Report it only if damage is major."],
     "answer": 0,
     "explain": "Try to find the owner; if you cannot, securely attach a note with your name, phone number, and address, and report the collision to law enforcement.",
     "ref": "Section 10: What to Do if You Are in a Collision"
@@ -3799,7 +3799,7 @@ const QUESTION_BANK =
     "topic": "vehicle-misc",
     "drills": ["numbers"],
     "q": "Cargo extending more than 4 feet beyond your rear bumper must display:",
-    "choices": ["A red or orange square flag.","A white towel tied to the load.","Nothing, if you drive slowly."],
+    "choices": ["A red or orange square flag.","A white towel tied to the load.","A yellow triangular reflector."],
     "answer": 0,
     "explain": "Cargo extending more than 4 feet beyond the rear bumper needs a 12-inch red or fluorescent orange square flag, and two red lights at night.",
     "ref": "Section 7: Other Important Roadway Information"
