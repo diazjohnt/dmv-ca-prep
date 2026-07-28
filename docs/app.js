@@ -353,7 +353,7 @@ if (typeof document !== "undefined") (function () {
       const correct = item.perm[picked] === 0;
       fb.innerHTML = `<span class="verdict ${correct ? "ok" : "no"}">${correct ? "✓ Correct" : "✗ Not quite"}</span>
         ${esc(q.explain)}<span class="ref">${esc(q.ref)} · California Driver’s Handbook</span>
-        ${correct ? "" : hbBlock(q.ref)}`;
+        ${hbBlock(q.ref)}`;
       fb.hidden = false;
     } else { fb.hidden = true; fb.innerHTML = ""; }
 
