@@ -31,7 +31,7 @@ const QUESTION_BANK =
     "id": "LIC-03",
     "topic": "licensing",
     "q": "A minor who fails the knowledge test must wait how long before retaking it?",
-    "choices": ["Seven days, not including the day of the failure.","Twenty-four hours.","Fourteen days, not including the day of the failure."],
+    "choices": ["Seven days.","Twenty-four hours.","Fourteen days."],
     "answer": 0,
     "explain": "Minors must wait seven days to retake a failed knowledge test, not counting the day they failed. (For a failed behind-the-wheel test, the wait is 14 days.)",
     "ref": "Section 3: Knowledge Test"
@@ -302,7 +302,7 @@ const QUESTION_BANK =
     "id": "INT-08",
     "topic": "intro-driving",
     "q": "If bright sunlight makes your signal lights hard to see, you should:",
-    "choices": ["Use hand-and-arm signals.","Turn on your emergency flashers instead.","Skip signaling until the sun goes down."],
+    "choices": ["Use hand-and-arm signals.","Use your emergency flashers instead.","Signal earlier than usual."],
     "answer": 0,
     "explain": "If your signal lights are hard to see, or not functioning, use hand-and-arm signals.",
     "ref": "Section 5: Signaling"
@@ -467,7 +467,7 @@ const QUESTION_BANK =
     "id": "INT-26",
     "topic": "intro-driving",
     "q": "Remember to turn off your turn signal:",
-    "choices": ["When you no longer need it.","Only when another driver honks at you.","It always turns off by itself."],
+    "choices": ["When you no longer need it.","Only when another driver honks.","Only at the end of your trip."],
     "answer": 0,
     "explain": "Turn off your signal when you no longer need it so you do not mislead other drivers.",
     "ref": "Section 5: Signaling"
@@ -922,7 +922,7 @@ const QUESTION_BANK =
     "id": "TRN-22",
     "topic": "turns",
     "q": "Once you have started moving through an intersection, you should:",
-    "choices": ["Keep going; if you started a turn, follow through.","Stop and back up if you change your mind.","Stop in the middle to re-check traffic."],
+    "choices": ["Keep going and follow through.","Stop and back up if unsure.","Stop in the middle to re-check."],
     "answer": 0,
     "explain": "Once you start through an intersection, keep going. If you started a turn, follow through. Last-minute changes increase collision risk.",
     "ref": "Section 6: Changing Lanes"
@@ -1031,7 +1031,7 @@ const QUESTION_BANK =
     "id": "PRK-04",
     "topic": "parking",
     "q": "You are parking headed downhill next to a curb. Turn your front wheels:",
-    "choices": ["Into the curb or toward the side of the road.","Away from the curb.","Straight ahead with the parking brake off."],
+    "choices": ["Into the curb.","Away from the curb.","Straight ahead."],
     "answer": 0,
     "explain": "Headed downhill, turn your front wheels into the curb or right toward the side of the road, set the parking brake, and leave the vehicle in park or in gear.",
     "ref": "Section 6: Parking on a Hill"
@@ -1150,7 +1150,7 @@ const QUESTION_BANK =
     "id": "PRK-17",
     "topic": "parking",
     "q": "Which of the following parking positions is legal?",
-    "choices": ["None of these. All are illegal.","Double parked, briefly.","Partially blocking a sidewalk."],
+    "choices": ["Parking 25 feet from a crosswalk.","Double parking for a moment.","Partially blocking a sidewalk."],
     "answer": 0,
     "explain": "It is illegal to park double parked, on or partially blocking a sidewalk, in front of a driveway, or on a marked or unmarked crosswalk.",
     "ref": "Section 6: Illegal Parking"
@@ -1278,7 +1278,7 @@ const QUESTION_BANK =
     "topic": "merging-passing",
     "drills": ["numbers"],
     "q": "To merge, enter, or cross city street traffic from a full stop, you need a gap of about:",
-    "choices": ["Half a block, which is about 150 feet.","Two car lengths.","A full block, which is about 500 feet."],
+    "choices": ["About 150 feet.","About two car lengths.","About 300 feet."],
     "answer": 0,
     "explain": "You need a space of about half a block (150 feet) on city streets, and a full block (about 300 feet) on the highway.",
     "ref": "Section 6: Crossing or Entering Traffic"
@@ -1288,7 +1288,7 @@ const QUESTION_BANK =
     "topic": "merging-passing",
     "drills": ["numbers"],
     "q": "To enter highway traffic from a full stop, you need a gap of about:",
-    "choices": ["A full block, which is about 300 feet.","Half a block, which is about 150 feet.","50 feet."],
+    "choices": ["About 300 feet.","About 150 feet.","About 50 feet."],
     "answer": 0,
     "explain": "On the highway you need about a full block (300 feet) to get up to the speed of traffic safely.",
     "ref": "Section 6: Crossing or Entering Traffic"
@@ -1354,7 +1354,7 @@ const QUESTION_BANK =
     "id": "MRG-11",
     "topic": "merging-passing",
     "q": "The driver ahead of you is signaling a left turn. You should never pass them:",
-    "choices": ["On the left.","On the right when safe.","At all. Passing turning vehicles is always illegal."],
+    "choices": ["On the left.","On the right, even when safe.","In any lane at any time."],
     "answer": 0,
     "explain": "Never pass on the left if the driver is signaling a left turn. You may pass safely on the right in that situation.",
     "ref": "Section 6: How to Pass"
@@ -1408,7 +1408,7 @@ const QUESTION_BANK =
     "id": "MRG-17",
     "topic": "merging-passing",
     "q": "Stopping on a freeway on-ramp while merging is:",
-    "choices": ["Something to avoid unless absolutely necessary.","Recommended so you can look for a gap.","Required before entering the freeway."],
+    "choices": ["To be avoided unless necessary.","Recommended while you find a gap.","Required before entering."],
     "answer": 0,
     "explain": "Merge into highway traffic when safe. Do not stop unless absolutely necessary, because you need speed to merge safely.",
     "ref": "Section 6: Merging"
@@ -1732,7 +1732,7 @@ const QUESTION_BANK =
     "drills": ["signs"],
     "sign": "slippery",
     "q": "This yellow warning sign showing a car with wavy skid marks means:",
-    "choices": ["The road may be slippery when wet.","Drunk drivers are common in this area.","The road curves sharply ahead."],
+    "choices": ["The road may be slippery when wet.","The road curves sharply ahead.","Loose gravel is on the roadway."],
     "answer": 0,
     "explain": "The Slippery When Wet warning sign means the road surface may be unusually slippery in wet weather. Slow down.",
     "ref": "Section 7: Warning Signs"
@@ -1852,7 +1852,7 @@ const QUESTION_BANK =
     "id": "ROW-05",
     "topic": "right-of-way",
     "q": "When entering traffic from a stop, you must:",
-    "choices": ["Proceed with caution and yield to traffic already occupying the lanes.","Expect moving traffic to make room for you.","Enter as soon as your light turns green regardless of space."],
+    "choices": ["Yield to traffic already in the lanes.","Expect traffic to make room for you.","Enter as soon as the light is green."],
     "answer": 0,
     "explain": "Yield to traffic already in the lanes. It is also against the law to enter an intersection you cannot completely cross before the light turns red.",
     "ref": "Section 7: Intersections"
@@ -1960,7 +1960,7 @@ const QUESTION_BANK =
     "id": "ROW-17",
     "topic": "right-of-way",
     "q": "An emergency vehicle approaches you using its siren and red lights. You must:",
-    "choices": ["Drive to the right edge of the road and stop until it has passed.","Speed up and get out of the area.","Stop immediately wherever you are, even in an intersection."],
+    "choices": ["Pull to the right edge and stop.","Speed up and get out of the area.","Stop immediately where you are."],
     "answer": 0,
     "explain": "Give the right-of-way: drive to the right edge of the road and stop until the emergency vehicle(s) have passed. Failure to pull over may result in a ticket.",
     "ref": "Section 7: Emergency Vehicles"
@@ -2143,7 +2143,7 @@ const QUESTION_BANK =
     "id": "SHR-11",
     "topic": "sharing-road",
     "q": "When driving near light rail vehicles, you should:",
-    "choices": ["Never turn in front of an approaching light rail vehicle.","Expect them to stop for you at crossings.","Race them to intersections since they are slow."],
+    "choices": ["Never turn in front of one.","Expect them to stop for you.","Race them to the intersection."],
     "answer": 0,
     "explain": "Never turn in front of an approaching light rail vehicle, maintain a safe distance, and be aware they can interrupt traffic lights.",
     "ref": "Section 7: Light Rail Vehicles"
@@ -2170,7 +2170,7 @@ const QUESTION_BANK =
     "id": "SHR-14",
     "topic": "sharing-road",
     "q": "Before opening your car door next to traffic, you should check for:",
-    "choices": ["Motorcyclists and bicyclists approaching from behind.","Parking enforcement officers.","Nothing. Passing traffic must avoid your door."],
+    "choices": ["Motorcyclists and bicyclists behind you.","Parking enforcement officers nearby.","Nothing; traffic must avoid your door."],
     "answer": 0,
     "explain": "Check for motorcyclists (and bicyclists) before you open your door next to traffic.",
     "ref": "Section 7: Motorcycles"
@@ -2444,7 +2444,7 @@ const QUESTION_BANK =
     "topic": "speed",
     "drills": ["numbers"],
     "q": "On a wet road, you should reduce your speed by about:",
-    "choices": ["5 to 10 mph.","One quarter.","Half."],
+    "choices": ["By 5 to 10 mph.","By 20 to 25 mph.","By half your speed."],
     "answer": 0,
     "explain": "Reduce speed 5 to 10 mph on a wet road, by half on packed snow, and to no more than 5 mph on ice.",
     "ref": "Section 8: Slippery Roads"
@@ -2454,7 +2454,7 @@ const QUESTION_BANK =
     "topic": "speed",
     "drills": ["numbers"],
     "q": "On packed snow, you should reduce your speed:",
-    "choices": ["By half.","By 5 mph.","To 45 mph."],
+    "choices": ["By half.","By 5 mph.","By one quarter."],
     "answer": 0,
     "explain": "On packed snow, cut your speed in half. On ice, slow to no more than 5 mph.",
     "ref": "Section 8: Slippery Roads"
@@ -2464,7 +2464,7 @@ const QUESTION_BANK =
     "topic": "speed",
     "drills": ["numbers"],
     "q": "On ice, you should reduce your speed to:",
-    "choices": ["No more than 5 mph.","No more than 25 mph.","Half the posted limit."],
+    "choices": ["No more than 5 mph.","No more than 25 mph.","No more than 45 mph."],
     "answer": 0,
     "explain": "On ice, reduce your speed to no more than 5 mph.",
     "ref": "Section 8: Slippery Roads"
@@ -2595,7 +2595,7 @@ const QUESTION_BANK =
     "topic": "safe-driving",
     "drills": ["numbers"],
     "q": "To give yourself time to react and avoid hazards, scan the road at least how far ahead of your vehicle?",
-    "choices": ["10 seconds.","3 seconds.","1 city block at most."],
+    "choices": ["10 seconds.","3 seconds.","1 second."],
     "answer": 0,
     "explain": "Keep your eyes moving and scan the road at least 10 seconds ahead of your vehicle to avoid last-minute moves.",
     "ref": "Section 8: Scan Your Surroundings"
@@ -2757,7 +2757,7 @@ const QUESTION_BANK =
     "id": "SAF-19",
     "topic": "safe-driving",
     "q": "You hear sloshing sounds from your tires in the rain. You should:",
-    "choices": ["Slow down. You may be close to hydroplaning.","Speed up to push the water away.","Turn on cruise control for steadiness."],
+    "choices": ["Slow down gradually.","Speed up to push water away.","Turn on cruise control."],
     "answer": 0,
     "explain": "Slow down if you hear sloshing from the tires, steer around standing water when possible, and slow before changing lanes or direction.",
     "ref": "Section 8: Hydroplaning"
@@ -2811,7 +2811,7 @@ const QUESTION_BANK =
     "id": "SAF-25",
     "topic": "safe-driving",
     "q": "Your passenger is 15 years old and not wearing a seat belt. Who can be ticketed?",
-    "choices": ["You, the driver.","Only the passenger.","No one. Seat belts are optional for passengers."],
+    "choices": ["You, the driver.","Only the passenger.","No one is ticketed."],
     "answer": 0,
     "explain": "You and all passengers must wear seat belts. If a passenger is under 16 and unbelted, you (the driver) can be ticketed.",
     "ref": "Section 8: Seat Belts"
@@ -2838,7 +2838,7 @@ const QUESTION_BANK =
     "id": "SAF-28",
     "topic": "safe-driving",
     "q": "If you are pregnant, wear the lap belt:",
-    "choices": ["As low as possible under your abdomen.","Across the middle of your abdomen.","Not at all. Pregnant drivers are exempt."],
+    "choices": ["As low as possible under your abdomen.","Across the middle of your abdomen.","Above your abdomen, near the ribs."],
     "answer": 0,
     "explain": "Pregnant drivers should wear the lap belt as low as possible under the abdomen, with the shoulder strap between the breasts and to the side of the abdomen's bulge.",
     "ref": "Section 8: Seat Belts"
@@ -2865,7 +2865,7 @@ const QUESTION_BANK =
     "id": "SAF-31",
     "topic": "safe-driving",
     "q": "Children under 8 years old (or shorter than 4 feet 9 inches) generally must be secured:",
-    "choices": ["In a child passenger restraint system in a rear seat.","With a regular seat belt in any seat.","In the front seat where you can watch them."],
+    "choices": ["In a restraint system in a rear seat.","With a regular belt in any seat.","In the front seat beside the driver."],
     "answer": 0,
     "explain": "Children under 8 or under 4'9\" must ride in a child passenger restraint system in a rear seat, with limited exceptions (no rear seat, all rear seats occupied by younger children, medical reasons, etc.).",
     "ref": "Section 8: Child Restraint System and Safety Seats"
@@ -3003,7 +3003,7 @@ const QUESTION_BANK =
     "id": "SAF-46",
     "topic": "safe-driving",
     "q": "Make room for vehicles entering a freeway:",
-    "choices": ["Even if you have the right-of-way.","Only when they signal.","Never. Merging traffic must always wait."],
+    "choices": ["Even if you have the right-of-way.","Only when they signal to merge.","Never; merging traffic must wait."],
     "answer": 0,
     "explain": "Be aware of what is at your side: make space for vehicles entering freeways even when you technically have the right-of-way.",
     "ref": "Section 8: Know What Is at Your Side"
@@ -3428,7 +3428,7 @@ const QUESTION_BANK =
     "id": "REC-17",
     "topic": "records-penalties",
     "q": "A person convicted of reckless driving or a speed contest that injures another person is subject to:",
-    "choices": ["Imprisonment, a fine, or both.","Traffic school only.","A point on their record but no other penalty."],
+    "choices": ["Imprisonment, a fine, or both.","Traffic school attendance only.","A point, but no other penalty."],
     "answer": 0,
     "explain": "Reckless driving or engaging in a speed contest that causes injury is punishable by imprisonment, a fine, or both.",
     "ref": "Section 7: Speed Contests and Reckless Driving"
@@ -3530,7 +3530,7 @@ const QUESTION_BANK =
     "id": "INS-06",
     "topic": "insurance-collisions",
     "q": "What is one of the most common causes of traffic collisions?",
-    "choices": ["Driver distractions.","Paying attention to your surroundings.","Better traffic flow."],
+    "choices": ["Driver distractions.","Driving below the speed limit.","Using turn signals too early."],
     "answer": 0,
     "explain": "The most common causes of collisions include driver distractions, unsafe speed, improper turns, right-of-way violations, ignoring signs, and driving on the wrong side of the road.",
     "ref": "Section 10: Causes of Collisions"
@@ -3769,7 +3769,7 @@ const QUESTION_BANK =
     "id": "MSC-08",
     "topic": "vehicle-misc",
     "q": "Smoking in a vehicle when a minor is present is:",
-    "choices": ["Illegal. You can be fined.","Legal with the windows down.","A ticketable offense only on freeways."],
+    "choices": ["Illegal.","Legal with the windows down.","Illegal only on freeways."],
     "answer": 0,
     "explain": "You must not smoke when a minor is in the vehicle. You can be fined.",
     "ref": "Section 7: Other Important Roadway Information"
@@ -3845,7 +3845,7 @@ const QUESTION_BANK =
     "id": "MSC-16",
     "topic": "vehicle-misc",
     "q": "Hanging objects from your rearview mirror or posting signs that block your view:",
-    "choices": ["Is prohibited.","Is fine if they are small.","Is allowed on side windows only."],
+    "choices": ["Is prohibited.","Is allowed if they are small.","Is allowed on side windows only."],
     "answer": 0,
     "explain": "Do not put signs or objects on the windshield or side windows that block your view, and do not hang objects on the mirror.",
     "ref": "Section 7: Other Important Roadway Information"
