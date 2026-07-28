@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a19" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Unofficial California DMV Class C practice tests generated from the official 2025 California Driver's Handbook (DL 600).">
+  <title>California DMV Practice Exam: Class C Knowledge Test</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-header">
+    <button class="brand" id="brandHome" aria-label="Go to home screen">
+      <span class="brand-badge" aria-hidden="true">CA</span>
+      <span class="brand-text">DMV Practice Exam<span class="brand-sub">Class C Knowledge Test</span></span>
+    </button>
+    <nav class="header-nav">
+      <button class="nav-btn" id="navHistory">History</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HOME ============ -->
+    <section id="screen-home" class="screen">
+      <div class="card hero-card">
+        <h1>California DMV Practice Exam</h1>
+        <p class="subtitle">Class C Knowledge Test</p>
+        <p class="lede">Every test is generated from the official
+          <strong>2025 California Driver’s Handbook</strong> (DL 600, revision 6/2025), in the format
+          used by the DMV sample tests. Each question cites the handbook section it came from, and every
+          incorrect answer shows the passage it was drawn from.</p>
+        <p class="lede">The official Class C knowledge test has 36 questions for applicants 18 and older,
+          who must answer 30 correctly, and 46 questions for applicants under 18, who must answer 38
+          correctly. Both require roughly 83 percent.</p>
+        <p class="fine-print">Results are stored in this browser only and are never transmitted. This is an
+          independent study aid. It is not affiliated with, endorsed by, or produced by the California
+          Department of Motor Vehicles. Handbook content is used under
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>.</p>
+        <p class="resume-note" id="resumeNote" hidden>
+          You have a test in progress. <button class="btn-link" id="resumeTest">Resume it</button> or set up a new one below.
+        </p>
+      </div>
+
+      <div class="card" id="statsCard" hidden>
+        <h2>Your progress</h2>
+        <div class="stat-row" id="statTiles"></div>
+        <button class="btn btn-ghost" id="homeHistory">See full history</button>
+      </div>
+
+      <div class="card setup-card">
+        <h2>Set up your test</h2>
+
+        <div class="setup-step">
+          <div class="step-label" id="typeLabel"><span class="step-num">1</span>What kind of test?</div>
+          <div class="seg" role="radiogroup" aria-labelledby="typeLabel">
+            <button class="seg-btn" data-type="standard" role="radio">Standard<small>All topics, like the real test</small></button>
+            <button class="seg-btn" data-type="focused" role="radio">Focused subject<small>Drill one trouble spot</small></button>
+          </div>
+        </div>
+
+        <div class="setup-step" id="subjectStep" hidden>
+          <div class="step-label" id="subjectLabel"><span class="step-num">2</span>Which subject?</div>
+          <div class="seg seg-stack" id="subjectSeg" role="radiogroup" aria-labelledby="subjectLabel"></div>
+        </div>
+
+        <div class="setup-step">
+          <div class="step-label" id="lenLabel"><span class="step-num" id="lenStepNum">2</span>How many questions?</div>
+          <div class="seg" id="lenSeg" role="radiogroup" aria-labelledby="lenLabel"></div>
+          <p class="setting-note" id="passNote"></p>
+        </div>
+
+        <div class="setup-step">
+          <div class="step-label" id="modeLabel"><span class="step-num" id="modeStepNum">3</span>Mode</div>
+          <div class="seg" role="radiogroup" aria-labelledby="modeLabel">
+            <button class="seg-btn" data-mode="exam" role="radio">Exam<small>feedback at the end</small></button>
+            <button class="seg-btn" data-mode="study" role="radio">Study<small>instant feedback</small></button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-big" id="startTest">Start test</button>
+      </div>
+
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="quiz-top">
+        <button class="btn-link quit" id="quitTest">Exit</button>
+        <div class="progress-text" id="progressText"></div>
+      </div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+      <div class="card q-card">
+        <div class="q-sign" id="qSign" hidden></div>
+        <h2 class="q-text" id="qText"></h2>
+        <div class="choices" id="choices"></div>
+        <div class="feedback" id="feedback" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="quiz-actions">
+        <button class="counter" id="openPalette" aria-haspopup="dialog"
+                aria-label="Jump to a question or see all questions">
+          <span aria-live="polite"><strong id="counterNow">1</strong> of <span id="counterTotal">46</span></span>
+          <span class="counter-hint">tap to jump</span>
+        </button>
+        <div class="action-row">
+          <button class="btn btn-secondary" id="prevQ">Back</button>
+          <button class="btn btn-warning flag" id="flagQ" aria-pressed="false">Flag</button>
+          <button class="btn btn-primary" id="nextQ">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PALETTE (jump grid) ============ -->
+    <div class="sheet-backdrop" id="paletteSheet" hidden>
+      <div class="sheet" role="dialog" aria-modal="true" aria-label="Question overview">
+        <div class="sheet-head">
+          <h2>Questions</h2>
+          <button class="btn-link" id="closePalette">Close</button>
+        </div>
+        <form class="jump-row" id="jumpForm">
+          <label for="jumpInput">Go to question</label>
+          <input type="number" id="jumpInput" min="1" inputmode="numeric" placeholder="#">
+          <button class="btn btn-ghost" type="submit">Go</button>
+        </form>
+        <p class="sheet-legend">Or tap a number below.
+          <span class="dot dot-answered"></span> answered
+          <span class="dot dot-flagged"></span> flagged
+          <span class="dot dot-blank"></span> blank</p>
+        <div class="palette-grid" id="paletteGrid"></div>
+        <button class="btn btn-primary btn-big" id="submitTest">Submit test</button>
+      </div>
+    </div>
+
+    <!-- ============ RESULTS ============ -->
+    <section id="screen-results" class="screen" hidden>
+      <div class="card result-hero">
+        <div class="result-chip" id="resultChip"></div>
+        <div class="result-score" id="resultScore"></div>
+        <p class="result-note" id="resultNote"></p>
+      </div>
+      <div class="card">
+        <h2>By topic</h2>
+        <div class="topic-chart" id="topicChart"></div>
+      </div>
+      <div class="card" id="missedCard">
+        <h2 id="missedHead">Review your misses</h2>
+        <div id="missedList"></div>
+      </div>
+      <div class="quiz-actions results-actions">
+        <button class="btn btn-ghost" id="resultsHome">Home</button>
+        <button class="btn btn-ghost" id="drillMisses" hidden>Practice these</button>
+        <button class="btn btn-primary" id="newFromResults">New test</button>
+      </div>
+    </section>
+
+    <!-- ============ HISTORY ============ -->
+    <section id="screen-history" class="screen" hidden>
+      <div class="card">
+        <h2>Score history</h2>
+        <div id="trendWrap"></div>
+        <div class="attempt-list" id="attemptList"></div>
+        <p class="empty-note" id="historyEmpty" hidden>No tests taken yet. Your scores will show up here.</p>
+      </div>
+      <div class="card" id="lifetimeCard" hidden>
+        <h2>Lifetime accuracy by topic</h2>
+        <div class="topic-chart" id="lifetimeChart"></div>
+        <p class="setting-note" id="lifetimeNote"></p>
+      </div>
+      <div class="card" id="missBankCard" hidden>
+        <h2>Your personal weak spots</h2>
+        <p id="missBankNote"></p>
+        <button class="btn btn-primary" id="drillAllMisses">Practice everything I’ve missed</button>
+      </div>
+      <div class="quiz-actions results-actions">
+        <button class="btn btn-ghost danger" id="clearHistory">Clear history</button>
+        <button class="btn btn-primary" id="historyHome">Home</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="questions.js"></script>
+  <script src="handbook.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
