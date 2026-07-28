@@ -124,7 +124,7 @@ function extractPassage(headIdx, sec) {
   const end = sectionStart[sec] !== undefined ? sectionEnd(sec) : lines.length;
   const out = [];
   let chars = 0;
-  for (let i = headIdx + 1; i < end && chars < 1400; i++) {
+  for (let i = headIdx + 1; i < end && chars < 8000; i++) {
     const l = lines[i];
     if (isPageNum(l)) continue;
     if (/^SECTION \d+\./.test(l)) break;
@@ -151,12 +151,67 @@ function extractPassage(headIdx, sec) {
       text += (text ? " " : "") + l;
     }
   }
-  text = text.replace(/ {2,}/g, " ").replace(/\n /g, "\n").trim();
-  if (text.length > 1200) {
-    const cut = text.lastIndexOf(". ", 1200);
-    text = (cut > 300 ? text.slice(0, cut + 1) : text.slice(0, 1200)) + " …";
+  return text.replace(/ {2,}/g, " ").replace(/\n /g, "\n").trim();
+}
+
+/* A question cites a section, not a paragraph, and sections run long. Taking
+   the first 1200 characters showed the section's opening rather than the part
+   that answers the question: the immigration-status rule, for one, sits well
+   past the cutoff of the section its questions cite. That was tolerable when
+   the passage only appeared after a wrong answer. It appears after every
+   answer now, so the window has to be chosen rather than assumed.
+
+   The window is a contiguous run of the source, so the text stays verbatim and
+   still matches a search of the official PDF. */
+const MAX = 1200;
+const STOP = new Set(("the a an and or of to in on at for is are be you your with that this it "
+  + "when if not do does can may must should will from as by their they them there its").split(" "));
+const keyTerms = (s) => new Set(s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+  .filter(w => w.length > 3 && !STOP.has(w)));
+
+/* Units a window is built from: bullets and numbered steps stay whole, and
+   prose (which the reflow joins into one long line) splits into sentences so
+   a long paragraph is still windowable. */
+function splitUnits(text) {
+  const units = [];
+  for (const line of text.split("\n")) {
+    if (line.length <= MAX / 2 || /^[•\d]/.test(line.trim())) { units.push(line); continue; }
+    const parts = line.match(/[^.!?]+(?:[.!?]+["')\]]*|$)\s*/g) || [line];
+    let buf = "";
+    for (const p of parts) {
+      if (buf && (buf + p).length > MAX / 2) { units.push(buf.trim()); buf = p; }
+      else buf += p;
+    }
+    if (buf.trim()) units.push(buf.trim());
   }
-  return text;
+  return units.filter(u => u.length);
+}
+
+function selectWindow(text, probe) {
+  if (text.length <= MAX) return text;
+  const units = splitUnits(text);
+  const best = { score: -1, from: 0, to: 0 };
+  for (let i = 0; i < units.length; i++) {
+    let len = 0, j = i;
+    const seen = new Set();
+    while (j < units.length && len + units[j].length + 1 <= MAX) {
+      len += units[j].length + 1;
+      for (const w of keyTerms(units[j])) if (probe.has(w)) seen.add(w);
+      j++;
+    }
+    if (j === i) continue;                       // single unit longer than MAX
+    /* Prefer coverage; on a tie prefer the earlier window, which keeps the
+       section opening for questions whose answer matches nothing in particular. */
+    if (seen.size > best.score) { best.score = seen.size; best.from = i; best.to = j; }
+  }
+  if (best.score < 0) {                          // nothing fit: fall back to the opening
+    const cut = text.lastIndexOf(". ", MAX);
+    return (cut > 300 ? text.slice(0, cut + 1) : text.slice(0, MAX)) + " …";
+  }
+  let out = units.slice(best.from, best.to).join("\n").trim();
+  if (best.from > 0) out = "… " + out;
+  if (best.to < units.length) out = out + " …";
+  return out;
 }
 
 /* ---- build ---- */
@@ -169,9 +224,12 @@ for (const ref of refs) {
   const sec = parseInt(m[1], 10);
   const idx = findHeading(sec, m[2]);
   if (idx < 0) { missing.push(ref); continue; }
-  const passage = extractPassage(idx, sec);
-  if (passage.length < 40) { missing.push(ref + "  (too short: " + passage.length + ")"); continue; }
-  map[ref] = passage;
+  const full = extractPassage(idx, sec);
+  if (full.length < 40) { missing.push(ref + "  (too short: " + full.length + ")"); continue; }
+  /* Aim the window at what the citing questions actually assert. */
+  const probe = keyTerms(BANK.filter(q => q.ref.split(" / ")[0].trim() === ref)
+    .map(q => q.choices[0] + " " + q.explain).join(" "));
+  map[ref] = selectWindow(full, probe);
 }
 
 console.log("Distinct refs: " + refs.length);
