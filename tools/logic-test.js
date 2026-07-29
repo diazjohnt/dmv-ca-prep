@@ -7,6 +7,8 @@ const assert = require("assert");
 
 const bankSrc = fs.readFileSync(path.join(__dirname, "..", "docs", "questions.js"), "utf8");
 const BANK = JSON.parse(bankSrc.slice(bankSrc.indexOf("["), bankSrc.lastIndexOf("]") + 1));
+const hbSrc = fs.readFileSync(path.join(__dirname, "..", "docs", "handbook.js"), "utf8");
+const HANDBOOK = JSON.parse(hbSrc.slice(hbSrc.indexOf("{"), hbSrc.lastIndexOf("}") + 1));
 const { mulberry32, passNeeded, topicQuotas, buildTest, buildDrill, buildFocused, lengthChoices } = require(path.join(__dirname, "..", "docs", "app.js"));
 
 let passed = 0;
@@ -79,14 +81,28 @@ ok("drills preserve ids and shuffle choices", () => {
 });
 
 ok("every question ref has a handbook excerpt", () => {
-  const hbSrc = fs.readFileSync(path.join(__dirname, "..", "docs", "handbook.js"), "utf8");
-  const HB = JSON.parse(hbSrc.slice(hbSrc.indexOf("{"), hbSrc.lastIndexOf("}") + 1));
   const missing = [];
   for (const q of BANK) {
     const key = q.ref.split(" / ")[0].trim();
-    if (!HB[key] || HB[key].length < 40) missing.push(q.id + " -> " + key);
+    if (!HANDBOOK[key] || HANDBOOK[key].length < 40) missing.push(q.id + " -> " + key);
   }
   assert.deepStrictEqual(missing, [], missing.join(", "));
+});
+
+ok("handbook excerpts are whole passages, not cut off mid-sentence", () => {
+  /* The figure captions beside the text on a two-column page arrive in the
+     extracted handbook as short lines of their own. Read as headings, they cut
+     the passage short: the WRONG WAY excerpt was once the single fragment
+     "If you enter a roadway against traffic, DO NOT ENTER and". */
+  const cut = [];
+  for (const [ref, passage] of Object.entries(HANDBOOK)) {
+    const text = passage.trim();
+    const last = text.slice(text.lastIndexOf("\n") + 1).trim();
+    /* A trailing ellipsis marks a passage the display window ended early. */
+    if (!/[.!?:”")\]…]$/.test(last)) cut.push(ref + ': "' + last.slice(-48) + '"');
+    if (/^[a-z]/.test(text)) cut.push(ref + " starts mid-sentence");
+  }
+  assert.deepStrictEqual(cut, [], cut.length + " excerpt(s) cut off mid-sentence:\n  " + cut.join("\n  "));
 });
 
 const drillIds = (tag) => BANK.filter(q => (q.drills || []).includes(tag)).map(q => q.id);
@@ -200,8 +216,7 @@ ok("project copy carries no em dashes, handbook quotes keep theirs", () => {
     const n = (text.match(/—/g) || []).length;
     assert.strictEqual(n, 0, f + " still has " + n + " em dashes");
   }
-  const hb = fs.readFileSync(path.join(__dirname, "..", "docs", "handbook.js"), "utf8");
-  assert.ok(hb.includes("—"), "handbook passages should stay verbatim");
+  assert.ok(hbSrc.includes("—"), "handbook passages should stay verbatim");
 });
 
 console.log("ALL LOGIC TESTS PASSED (" + passed + ")");
