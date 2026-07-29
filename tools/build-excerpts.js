@@ -43,12 +43,20 @@ const sectionEnd = (n) => {
 const norm = (s) => s.replace(/^\s*\d+\.\s*/, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 
 /* Hand-written passages for regions the PDF extraction garbles (form overlays)
-   or where the first match is a figure grid. Keys are exact ref strings. */
+   or where the first match is a figure grid. Keys are exact ref strings.
+
+   Two kinds live here, and the difference decides whether an entry can ever be
+   retired. Structural ones stand in for pages the layout dump cannot represent
+   as prose at all: a scanned form, a grid of sign art with no body text. Those
+   are permanent. The rest stand in for passages the extractor once mangled,
+   and each is debt: when the extractor learns to read that page, check the
+   extraction against the entry and delete it. Two went that way with the
+   figure-column fix. Anything left here must still read verbatim against the
+   official PDF, since the app presents it as the handbook's own words. */
 const OVERRIDES = {
+  /* Structural: a form overlay, extracts as "NAME (FIRST, MIDDLE, LAST) DMV places..." */
   "Section 12: Driver's License Restrictions":
     "DMV places restrictions on a driver's license to ensure a driver is operating a vehicle within their ability. Restrictions may be imposed by DMV or required by law. Restrictions placed on your driving privilege will be reasonable and necessary for your safety and the safety of others. Restrictions and conditions may include:\n• Requiring a driver to place special mechanical devices on their vehicle, such as hand controls.\n• Limiting when and where a person may drive, such as no night or freeway driving.\n• Requiring eyeglasses or corrective contact lenses.\n• Requiring additional devices, such as outside mirrors.\nNOTE: There are no specific restrictions for seniors. All restrictions are based on conditions, not age.",
-  "Section 12: Priority Reexamination":
-    "If you come in contact with law enforcement and receive a Notice of Priority Reexamination of Driver with a check mark in the top box, carefully read the form. You have five working days to contact DMV to initiate the process or your driving privilege will be automatically suspended.",
   "Section 7: Warning Signs":
     "Warning signs are diamond-shaped yellow signs that warn you of specific road conditions and dangers ahead. Examples include: Slippery When Wet, Merging Traffic, Divided Highway, Two Way Traffic, Lane Ends, End Divided Highway, Traffic Signal Ahead, Pedestrian Crossing, Added Lane, Crossroad, Stop Ahead, Yield Ahead, Directional Arrow, Curve, T Intersection, and Winding Road. Separate warning signs also warn of conditions related to pedestrians, bicyclists, schools, playgrounds, school buses, and school passenger loading zones. Obey all warning signs regardless of their shape or color.",
   "Section 7: Right-of-Way Rules":
@@ -67,8 +75,6 @@ const OVERRIDES = {
     "When you park on a hill, your vehicle could roll due to equipment failure. Remember to set the parking brake and leave the vehicle in park, or in gear for manual transmission. To park:\n• On a sloping driveway: Turn the wheels so the vehicle will not roll into the street, leave the vehicle in park and set the parking brake.\n• Headed downhill: Turn your front wheels into the curb or right toward the side of the road.\n• Headed uphill: Turn your front wheels away from the curb (left-towards the center of the road) and let your vehicle roll back a few inches. The wheel should gently touch the curb.\n• Headed either uphill or downhill when there is no curb: Turn the wheels to the right so the vehicle will roll away from the center of the road if the brakes fail.",
   "Section 7: Braking":
     "Large vehicles and commercial trucks take longer to stop than passenger vehicles traveling at the same speed. When traveling, they create extra space in front of their vehicle to use if they need to stop suddenly. The average passenger vehicle traveling at 55 mph can stop within 300 feet. A large vehicle traveling at the same speed can take up to 400 feet to stop. The heavier the vehicle and the faster it is moving, the longer it takes to safely stop, so a loaded truck will take longer to stop than an empty truck. Do not move in front of a large vehicle and suddenly slow down or stop. The large vehicle will not be able to stop fast enough to avoid crashing into you.",
-  "Section 7: Vehicles with Hazardous Loads":
-    "A diamond-shaped sign on a truck means that the truck's load may be dangerous (gas, explosives, etc.). Vehicles with these signs must stop before crossing railroad tracks.",
   "Section 8: Seat Belts":
     "You and your passengers must wear seat belts. You can get a ticket if you do not. If your passenger is under 16 years old, you can also get a ticket if they are not wearing their seat belt. Wearing the lap belt and shoulder harness of a seat belt will increase your chance of survival in most types of collisions. When you are in a collision, your vehicle stops. But you keep moving at the same speed you were traveling. You only stop when you hit the dashboard or windshield. If you are struck from the side, the impact could push you back and forth across the seat. Seat and shoulder belts keep you in a better position to control the vehicle. They may also minimize serious injuries. It is important to wear the seat belt correctly to avoid injury or death:\n• Wear the shoulder harness across your shoulder and chest. There should be little to no slack. Do not wear the shoulder belt under your arm or behind your back.\n• Adjust the lap belt so that it is snug and lies low across your hips. Otherwise, you might slide out of the belt in a crash.\n• If you are pregnant, wear the lap belt as low as possible under your abdomen. Place the shoulder strap between your breasts and to the side of your abdomen's bulge."
 };
@@ -145,6 +151,12 @@ function extractPassage(headIdx, sec) {
     let trimmed = l.trim();
     if (!trimmed) continue;
     const indent = indentOf(l);
+    /* The three rules below run in this order and the order is load-bearing.
+       Each narrows what is left of the line before the next one reads it: the
+       caption splice and the gap rule cut art off the right, then the heading
+       tests judge what remains. Note that they judge `trimmed`, which those
+       cuts may have rewritten, while `indent` still describes the line as it
+       sits on the page, which is what decides whether it is art at all. */
     /* The rest of a caption that ran onto a second line can end up touching
        the body text with a single space, too narrow for the gap rule below.
        Cut at the column the caption started in. Only the line that finishes
@@ -215,7 +227,7 @@ const keyTerms = (s) => new Set(s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").spli
 function splitUnits(text) {
   const units = [];
   for (const line of text.split("\n")) {
-    if (line.length <= MAX / 2 || /^[•\d]/.test(line.trim())) { units.push(line); continue; }
+    if (line.length <= MAX / 2 || /^[•\d—–]/.test(line.trim())) { units.push(line); continue; }
     const parts = line.match(/[^.!?]+(?:[.!?]+["')\]]*|$)\s*/g) || [line];
     let buf = "";
     for (const p of parts) {
