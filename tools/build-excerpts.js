@@ -25,6 +25,7 @@ const lines = rawLines.map(l =>
    .replace(/\s+$/g, "")
 );
 const isPageNum = (l) => /^\s*\d{1,3}\s*$/.test(l);
+const indentOf = (l) => l.length - l.trimStart().length;
 
 /* ---- section boundaries ---- */
 const sectionStart = {};                              // sectionNumber -> line index
@@ -128,30 +129,30 @@ const ASIDE = 12;
 /* A line that stops short of sentence-ending punctuation is continued by the
    line after it, whether it is passage text or a wrapped figure caption. */
 const unfinished = (s) => !!s && !/[.!?:;•][")'”’\]]*$/.test(s);
-const midSentence = (out) => out.length > 0 && unfinished(out[out.length - 1]);
 
 function extractPassage(headIdx, sec) {
   const end = sectionStart[sec] !== undefined ? sectionEnd(sec) : lines.length;
-  const margin = lines[headIdx].length - lines[headIdx].trimStart().length;
+  const margin = indentOf(lines[headIdx]);
   const out = [];
   let chars = 0;
-  let asideCol = -1, asideLine = -1;                   // where a wrapped caption continues
+  let carry = -1;                                      // column an unfinished caption runs in
   for (let i = headIdx + 1; i < end && chars < 8000; i++) {
     const l = lines[i];
+    const asideCol = carry;                            // a caption reaches the next line only
+    carry = -1;
     if (isPageNum(l)) continue;
     if (/^SECTION \d+\./.test(l)) break;
-    if (!l.trim()) { asideCol = -1; continue; }        // the figure column ends with its block
     let trimmed = l.trim();
-    const indent = l.length - l.trimStart().length;
+    if (!trimmed) continue;
+    const indent = indentOf(l);
     /* The rest of a caption that ran onto a second line can end up touching
        the body text with a single space, too narrow for the gap rule below.
-       Cut at the column the caption started in, and only on the line that
-       finishes it, so body text of the same width is left alone. */
-    if (asideCol > 0 && i === asideLine + 1 && indent < asideCol && l.length > asideCol
+       Cut at the column the caption started in. Only the line that finishes
+       the caption is cut, so body text of the same width is left alone. */
+    if (asideCol > 0 && indent < asideCol && l.length > asideCol
         && l[asideCol] !== " " && l[asideCol - 1] === " ") {
-      const tail = l.slice(asideCol).trim();
+      if (unfinished(l.slice(asideCol).trim())) carry = asideCol;
       trimmed = l.slice(0, asideCol).trim();
-      if (unfinished(tail)) asideLine = i; else asideCol = -1;
     }
     /* Columnar figure captions (big internal space runs): keep any real text
        before the first gap, drop bare caption words entirely. Cut BEFORE the
@@ -168,12 +169,13 @@ function extractPassage(headIdx, sec) {
        "DO NOT ENTER and" came to be the whole of the WRONG WAY excerpt. A
        centered figure or table title still ends the passage, but only where
        the prose has already finished a sentence. */
+    const prev = out[out.length - 1];
     if (indent - margin >= ASIDE) {
-      if (out.length > 0 && looksLikeHeading(trimmed) && !midSentence(out)) break;
-      if (unfinished(trimmed)) { asideCol = indent; asideLine = i; }
+      if (prev && looksLikeHeading(trimmed) && !unfinished(prev)) break;
+      if (unfinished(trimmed)) carry = indent;
       continue;
     }
-    if (out.length > 0 && looksLikeHeading(trimmed) && !/^\d+\.\s/.test(trimmed)) break;
+    if (prev && looksLikeHeading(trimmed) && !/^\d+\.\s/.test(trimmed)) break;
     out.push(trimmed);
     chars += trimmed.length;
   }
