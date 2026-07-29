@@ -361,6 +361,7 @@ h2 { font-size: 17px; margin: 0 0 12px; }
 .mini-chip { font-size: 12px; font-weight: 800; border-radius: 999px; padding: 3px 10px; }
 .mini-chip.pass { background: var(--good-soft); color: var(--good-text); }
 .mini-chip.fail { background: var(--bad-soft); color: var(--bad); }
+.mini-chip.plain { background: var(--series-soft); color: var(--ink-2); font-weight: 700; }
 .empty-note { color: var(--muted); text-align: center; padding: 12px 0; }
 
 #trendWrap { margin-bottom: 8px; }
