@@ -89,6 +89,23 @@ ok("every question ref has a handbook excerpt", () => {
   assert.deepStrictEqual(missing, [], missing.join(", "));
 });
 
+ok("handbook excerpts are whole passages, not cut off mid-sentence", () => {
+  /* The figure captions beside the text on a two-column page arrive in the
+     extracted handbook as short lines of their own. Read as headings, they cut
+     the passage short: the WRONG WAY excerpt was once the single fragment
+     "If you enter a roadway against traffic, DO NOT ENTER and". */
+  const hbSrc = fs.readFileSync(path.join(__dirname, "..", "docs", "handbook.js"), "utf8");
+  const HB = JSON.parse(hbSrc.slice(hbSrc.indexOf("{"), hbSrc.lastIndexOf("}") + 1));
+  const cut = [];
+  for (const [ref, passage] of Object.entries(HB)) {
+    const last = passage.trim().split("\n").pop().trim();
+    /* A trailing ellipsis marks a passage the display window ended early. */
+    if (!/([.!?:”")\]]|…)$/.test(last)) cut.push(ref + ': "' + last.slice(-48) + '"');
+    if (/^…/.test(passage.trim()) === false && /^[a-z]/.test(passage.trim())) cut.push(ref + " starts mid-sentence");
+  }
+  assert.deepStrictEqual(cut, [], cut.length + " excerpt(s) cut off mid-sentence:\n  " + cut.join("\n  "));
+});
+
 const drillIds = (tag) => BANK.filter(q => (q.drills || []).includes(tag)).map(q => q.id);
 
 ok("length choices show a sample and a full option, without stray counts", () => {

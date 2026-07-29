@@ -1,7 +1,7 @@
 /* Service worker: precache the app shell so repeat visits are instant and the
    app works offline (e.g., at the DMV office with bad reception).
    Bump VERSION whenever any cached file changes. */
-const VERSION = "dmvprep-v9";
+const VERSION = "dmvprep-v10";
 const CORE = [
   ".",
   "index.html",

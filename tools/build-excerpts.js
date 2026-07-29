@@ -120,16 +120,39 @@ function looksLikeHeading(l) {
   return caps / words.length >= 0.6;
 }
 
+/* Distance right of the passage margin at which a line belongs to the figure
+   column beside the text rather than to the passage. Sub-bullets indent by up
+   to 8; the art column on every two-column page starts well beyond that. */
+const ASIDE = 12;
+
+/* A line that stops short of sentence-ending punctuation is continued by the
+   line after it, whether it is passage text or a wrapped figure caption. */
+const unfinished = (s) => !!s && !/[.!?:;•][")'”’\]]*$/.test(s);
+const midSentence = (out) => out.length > 0 && unfinished(out[out.length - 1]);
+
 function extractPassage(headIdx, sec) {
   const end = sectionStart[sec] !== undefined ? sectionEnd(sec) : lines.length;
+  const margin = lines[headIdx].length - lines[headIdx].trimStart().length;
   const out = [];
   let chars = 0;
+  let asideCol = -1, asideLine = -1;                   // where a wrapped caption continues
   for (let i = headIdx + 1; i < end && chars < 8000; i++) {
     const l = lines[i];
     if (isPageNum(l)) continue;
     if (/^SECTION \d+\./.test(l)) break;
+    if (!l.trim()) { asideCol = -1; continue; }        // the figure column ends with its block
     let trimmed = l.trim();
-    if (!trimmed) continue;
+    const indent = l.length - l.trimStart().length;
+    /* The rest of a caption that ran onto a second line can end up touching
+       the body text with a single space, too narrow for the gap rule below.
+       Cut at the column the caption started in, and only on the line that
+       finishes it, so body text of the same width is left alone. */
+    if (asideCol > 0 && i === asideLine + 1 && indent < asideCol && l.length > asideCol
+        && l[asideCol] !== " " && l[asideCol - 1] === " ") {
+      const tail = l.slice(asideCol).trim();
+      trimmed = l.slice(0, asideCol).trim();
+      if (unfinished(tail)) asideLine = i; else asideCol = -1;
+    }
     /* Columnar figure captions (big internal space runs): keep any real text
        before the first gap, drop bare caption words entirely. Cut BEFORE the
        heading check so "Heading   Caption" lines still stop the passage. */
@@ -138,6 +161,18 @@ function extractPassage(headIdx, sec) {
       trimmed = gap[1].trim();
       if (!/[.:;•]/.test(trimmed) && trimmed.split(/\s+/).length <= 2) continue;
     }
+    /* A caption that sits alone on its line, because the body text beside it
+       wrapped short, arrives here with nothing to its left. It is art, not
+       passage: skip it and let the sentence it interrupts continue. Treating
+       one as a heading truncated the passage mid-sentence, which is how
+       "DO NOT ENTER and" came to be the whole of the WRONG WAY excerpt. A
+       centered figure or table title still ends the passage, but only where
+       the prose has already finished a sentence. */
+    if (indent - margin >= ASIDE) {
+      if (out.length > 0 && looksLikeHeading(trimmed) && !midSentence(out)) break;
+      if (unfinished(trimmed)) { asideCol = indent; asideLine = i; }
+      continue;
+    }
     if (out.length > 0 && looksLikeHeading(trimmed) && !/^\d+\.\s/.test(trimmed)) break;
     out.push(trimmed);
     chars += trimmed.length;
@@ -145,7 +180,10 @@ function extractPassage(headIdx, sec) {
   /* reflow: bullets and numbered steps start new lines; prose joins with spaces */
   let text = "";
   for (const l of out) {
-    if (/^[•]/.test(l) || /^\d+\.\s/.test(l) || /^(NOTE|IMPORTANT|EXCEPTION):/i.test(l) || /^. /.test(l)) {
+    /* The trailing test is for the handbook's em dash sub-bullets. It read
+       /^. /, an unescaped dot, so any line whose first word was one character
+       ("A", "a", "6") also started a new line and split a sentence in two. */
+    if (/^[•]/.test(l) || /^\d+\.\s/.test(l) || /^(NOTE|IMPORTANT|EXCEPTION):/i.test(l) || /^[—–-] /.test(l)) {
       text += "\n" + l;
     } else {
       text += (text ? " " : "") + l;
