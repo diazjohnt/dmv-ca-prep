@@ -89,16 +89,17 @@ function buildFocused(ids, length, seen, rnd) {
 
 /* Length choices for a pool: always "10 or full", where full is 46 when the
    pool allows it and the whole pool otherwise. Pools of 10 or fewer offer
-   only "All". */
+   only "All". A pool with more questions than "full" takes also offers
+   "Extreme", the whole thing in one sitting. Only a standard pool can be in
+   that position: a focused subject's "All" already is its whole pool. */
 function lengthChoices(poolSize, isFocused) {
-  const full = isFocused ? poolSize : Math.min(46, poolSize);
-  const fullLabel = isFocused ? "All" : "Full test";
-  const fullNote = isFocused ? "every question in this subject" : "same length as the real test";
-  if (poolSize <= 10) return [{ pref: "full", value: poolSize, label: fullLabel, note: fullNote }];
-  return [
-    { pref: "short", value: 10, label: "10 question sample", note: "quick practice" },
-    { pref: "full", value: full, label: fullLabel, note: fullNote }
-  ];
+  const full = isFocused
+    ? { pref: "full", value: poolSize, label: "All", note: "every question in this subject" }
+    : { pref: "full", value: Math.min(46, poolSize), label: "Full test", note: "same length as the real test" };
+  if (poolSize <= 10) return [full];
+  const sample = { pref: "short", value: 10, label: "10 question sample", note: "quick practice" };
+  if (poolSize <= full.value) return [sample, full];
+  return [sample, full, { pref: "extreme", value: poolSize, label: "Extreme", note: "the whole question bank" }];
 }
 
 function buildDrill(ids, rnd) {
@@ -180,7 +181,7 @@ if (typeof document !== "undefined") (function () {
 
   let settings = Object.assign({ type: "standard", subject: "signs", lengthPref: "full", mode: "exam" },
     store.get(K.settings, {}));
-  if (settings.lengthPref !== "short" && settings.lengthPref !== "full") {
+  if (!["short", "full", "extreme"].includes(settings.lengthPref)) {
     settings.lengthPref = settings.length === 10 ? "short" : "full";   // migrate older {length: n}
   }
   delete settings.length; delete settings.customLen;
@@ -215,10 +216,12 @@ if (typeof document !== "undefined") (function () {
   function currentChoices() {
     return lengthChoices(currentPool().length, settings.type === "focused");
   }
-  function effectiveLength() {
+  /* The stored pref resolved against what this pool actually offers. A pref
+     with no match falls back to the last choice, which is how "extreme"
+     degrades to a focused subject's "All" and returns on the way back. */
+  function currentChoice() {
     const choices = currentChoices();
-    const hit = choices.find(c => c.pref === settings.lengthPref);
-    return (hit || choices[choices.length - 1]).value;
+    return choices.find(c => c.pref === settings.lengthPref) || choices[choices.length - 1];
   }
 
   /* Handbook source passage for a question's reference (first ref when combined). */
@@ -249,16 +252,17 @@ if (typeof document !== "undefined") (function () {
     $("lenStepNum").textContent = focused ? "3" : "2";
     $("modeStepNum").textContent = focused ? "4" : "3";
 
-    const choices = currentChoices();
-    const activePref = (choices.find(c => c.pref === settings.lengthPref) || choices[choices.length - 1]).pref;
-    $("lenSeg").innerHTML = choices.map(c =>
-      `<button class="seg-btn" data-lenpref="${c.pref}" role="radio" aria-checked="${c.pref === activePref}">${c.label}<small>${c.note}</small></button>`).join("");
+    const choice = currentChoice();
+    const extreme = choice.pref === "extreme";
+    $("lenSeg").innerHTML = currentChoices().map(c =>
+      `<button class="seg-btn" data-lenpref="${c.pref}" role="radio" aria-checked="${c.pref === choice.pref}">${c.label}<small>${c.note}</small></button>`).join("");
 
-    const n = effectiveLength();
-    $("passNote").textContent = `Pass line: ${passNeeded(n)} of ${n} correct, about 83 percent, the same bar as the real test.`;
+    const n = choice.value;
+    $("passNote").textContent = `Pass line: ${passNeeded(n)} of ${n} correct, about 83 percent, the same bar as the real test.`
+      + (extreme ? " Far longer than the real test. Your progress saves as you go, so you can exit and resume." : "");
     $("startTest").textContent = focused
       ? `Start ${SUBJECTS[settings.subject].name.toLowerCase()} test`
-      : "Start test";
+      : extreme ? "Start extreme test" : "Start test";
 
     const hist = store.get(K.history, []);
     const standard = hist.filter(h => !h.focused);
@@ -282,7 +286,8 @@ if (typeof document !== "undefined") (function () {
 
   function startTest(fromResume) {
     if (!fromResume) {
-      const n = effectiveLength();
+      const choice = currentChoice();
+      const n = choice.value;
       const seen = store.get(K.seen, {});
       const focused = settings.type === "focused";
       active = {
@@ -292,6 +297,7 @@ if (typeof document !== "undefined") (function () {
         answers: {}, flags: {}, idx: 0,
         mode: settings.mode, isDrill: false,
         focused: focused, subject: focused ? settings.subject : null,
+        extreme: choice.pref === "extreme",
         startedAt: Date.now(), submitted: false
       };
       store.set(K.active, active);
@@ -445,7 +451,7 @@ if (typeof document !== "undefined") (function () {
       ts: Date.now(), len: active.items.length, correct,
       pass: correct >= passNeeded(active.items.length),
       mode: active.mode, perTopic, missed, wasDrill: active.isDrill,
-      focused: !!active.focused, subject: active.subject,
+      focused: !!active.focused, subject: active.subject, extreme: !!active.extreme,
       answers: active.items.map((item, i) => ({ id: item.id, perm: item.perm, picked: active.answers[i] ?? null }))
     };
 
@@ -456,7 +462,7 @@ if (typeof document !== "undefined") (function () {
       const hist = store.get(K.history, []);
       hist.push({
         ts: result.ts, len: result.len, correct, pass: result.pass, mode: result.mode,
-        perTopic, missed, focused: result.focused, subject: result.subject
+        perTopic, missed, focused: result.focused, subject: result.subject, extreme: result.extreme
       });
       while (hist.length > 200) hist.shift();
       store.set(K.history, hist);
@@ -479,11 +485,14 @@ if (typeof document !== "undefined") (function () {
     const subjectLine = r.focused && SUBJECTS[r.subject]
       ? `${SUBJECTS[r.subject].name} · focused practice. Counts toward your topic stats, not your readiness trend. `
       : "";
+    const verdict = !r.pass
+      ? `You needed ${need - r.correct} more. Review your misses below and try again.`
+      : r.focused ? "Solid. You know this subject."
+        : r.extreme ? "That’s a passing score across the whole bank. Nothing left to surprise you."
+          : "That’s a passing score on the real test. Keep it up!";
     $("resultNote").textContent = r.wasDrill
       ? "Drills are for practice. They don’t count toward your history."
-      : subjectLine + `Pass line for this length: ${need} of ${r.len}. ` + (r.pass
-        ? (r.focused ? "Solid. You know this subject." : "That’s a passing score on the real test. Keep it up!")
-        : `You needed ${need - r.correct} more. Review your misses below and try again.`);
+      : subjectLine + `Pass line for this length: ${need} of ${r.len}. ` + verdict;
 
     renderTopicChart($("topicChart"), r.perTopic);
 
@@ -543,6 +552,7 @@ if (typeof document !== "undefined") (function () {
         " · " + new Date(h.ts).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
       return `<div class="attempt"><span class="when">${when}</span>
         <span class="score">${h.correct}/${h.len} (${pct(h.correct, h.len)}%)</span>
+        ${h.extreme ? '<span class="mini-chip plain">extreme</span>' : ""}
         <span class="mini-chip ${h.pass ? "pass" : "fail"}">${h.pass ? "✓ pass" : "✗ fail"}</span></div>`;
     }).join("");
 

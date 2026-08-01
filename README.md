@@ -40,6 +40,9 @@
 - **Real pass lines.** Choose a **10 question sample** or the **full test**
   (46 questions, pass = 38). Focused subjects offer the sample or **All** of
   that subject. The bar is always about 83%, same as the real exam.
+- **Extreme mode.** One sitting, all 428 questions, same 83% bar (pass = 354).
+  Nothing in the bank goes unseen. Progress saves as you go, so you can exit
+  and resume where you left off.
 - **Exam and Study modes.** Exam gives feedback at the end, like the real thing.
   Study explains every answer the moment you pick it.
 - **The handbook teaches you.** Every question cites its handbook section, and

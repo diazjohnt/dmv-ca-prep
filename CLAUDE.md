@@ -60,12 +60,18 @@ logic tests reach them. Keep all DOM code inside the
   focused tests, then length, then mode, with the start button last. Later steps
   adapt to earlier answers so the options shown are always valid.
 - Settings are stored as `{type, subject, lengthPref, mode}`. `lengthPref` is
-  `"short"` or `"full"` rather than a number, so the choice survives switching
-  subjects.
+  `"short"`, `"full"`, or `"extreme"` rather than a number, so the choice
+  survives switching subjects. A pref with no matching choice falls back to the
+  last one offered, which is how `"extreme"` degrades to a focused subject's
+  `"All"` and comes back when the standard track is reselected.
 - `lengthChoices(poolSize, isFocused)` offers a 10 question sample plus either
-  the full test (standard, capped at 46) or all of a focused subject. **Labels
-  must not contain counts.** Advertising a pool size next to a smaller maximum
-  reads as a contradiction.
+  the full test (standard, capped at 46) or all of a focused subject. A standard
+  pool deeper than 46 also offers `"Extreme"`, the whole bank in one sitting;
+  a focused subject never does, because its `"All"` already is the whole pool.
+  **Labels must not contain counts.** Advertising a pool size next to a smaller
+  maximum reads as a contradiction.
+- Extreme runs are standard tests, so they count toward the attempt list and the
+  readiness trend, tagged `extreme: true` for the marker in the attempt row.
 - Focused runs are stored with `focused: true`. They feed per-topic accuracy and
   the weak-spot bank but are excluded from the attempt list and readiness trend,
   which measures standard-test readiness only.

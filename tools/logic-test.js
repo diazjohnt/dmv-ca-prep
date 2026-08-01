@@ -109,8 +109,8 @@ const drillIds = (tag) => BANK.filter(q => (q.drills || []).includes(tag)).map(q
 
 ok("length choices show a sample and a full option, without stray counts", () => {
   const std = lengthChoices(422, false);
-  assert.deepStrictEqual(std.map(c => c.label), ["10 question sample", "Full test"]);
-  assert.deepStrictEqual(std.map(c => c.value), [10, 46]);       // standard caps at the real length
+  assert.deepStrictEqual(std.map(c => c.label), ["10 question sample", "Full test", "Extreme"]);
+  assert.deepStrictEqual(std.map(c => c.value), [10, 46, 422]);  // full caps at the real length, extreme takes the bank
 
   const signs = lengthChoices(20, true);
   assert.deepStrictEqual(signs.map(c => c.label), ["10 question sample", "All"]);
@@ -126,6 +126,45 @@ ok("length choices show a sample and a full option, without stray counts", () =>
   // No label may advertise a number, since counts confused the length step.
   [std, signs, numbers, tiny].flat().forEach(c =>
     assert.ok(!/\d/.test(c.label.replace("10 question sample", "")), "stray count in " + c.label));
+});
+
+ok("extreme is offered only where it means more than the full test", () => {
+  // A focused subject already ends in "All", so a second whole-pool option would duplicate it.
+  [lengthChoices(20, true), lengthChoices(86, true), lengthChoices(6, true)].forEach(cs =>
+    assert.ok(!cs.some(c => c.pref === "extreme"), "focused pools must not offer extreme"));
+
+  // A standard bank no deeper than the real test has nothing extra to give.
+  [lengthChoices(46, false), lengthChoices(30, false), lengthChoices(9, false)].forEach(cs =>
+    assert.ok(!cs.some(c => c.pref === "extreme"), "a shallow bank must not offer extreme"));
+
+  const real = lengthChoices(BANK.length, false);
+  const extreme = real.find(c => c.pref === "extreme");
+  assert.ok(extreme, "the real bank is deeper than 46 and should offer extreme");
+  assert.strictEqual(extreme.value, BANK.length);
+});
+
+ok("an extreme test serves the whole bank, once each, at the same pass bar", () => {
+  const t = buildTest(BANK, BANK.length, {}, mulberry32(21));
+  assert.strictEqual(t.length, BANK.length);
+  assert.strictEqual(new Set(t.map(x => x.id)).size, BANK.length);
+  assert.deepStrictEqual(
+    t.map(x => x.id).sort(),
+    BANK.map(q => q.id).sort(),
+    "every question in the bank must appear exactly once"
+  );
+  t.forEach(x => assert.deepStrictEqual([...x.perm].sort().join(""), "012"));
+
+  // Asking for more than the bank holds still yields the bank, not a short test.
+  assert.strictEqual(buildTest(BANK, BANK.length + 50, {}, mulberry32(22)).length, BANK.length);
+
+  // Seen counts must not shrink an extreme run: it is every question by definition.
+  const seen = {};
+  BANK.forEach((q, i) => { if (i % 3 === 0) seen[q.id] = 4; });
+  assert.strictEqual(buildTest(BANK, BANK.length, seen, mulberry32(23)).length, BANK.length);
+
+  const need = passNeeded(BANK.length);
+  const share = need / BANK.length;
+  assert.ok(share > 0.82 && share < 0.84, "extreme pass share drifted to " + share.toFixed(3));
 });
 
 ok("every drill pool is tagged in the data and non-trivial", () => {
