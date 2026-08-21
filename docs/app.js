@@ -170,7 +170,7 @@ if (typeof document !== "undefined") (function () {
     signalahead: DIAMOND('<rect x="47" y="27" width="26" height="66" rx="7" fill="#1a1a19"/><circle cx="60" cy="41" r="9" fill="#c8102e"/><circle cx="60" cy="60" r="9" fill="#ffcd00"/><circle cx="60" cy="79" r="9" fill="#00843d"/>'),
     laneends: DIAMOND('<path d="M41 34v56" stroke="#1a1a19" stroke-width="10"/><path d="M67 32v16l9.5 12v29" fill="none" stroke="#1a1a19" stroke-width="10" stroke-linejoin="round"/><path d="M64.5 63v30" stroke="#1a1a19" stroke-width="4.6" stroke-dasharray="5.5 6.5"/>'),
     dividedhwy: DIAMOND('<path d="M52 24h19q2.5 0 2.3 2.8Q72.7 44 61.5 53 50.3 44 49.7 26.8q-.2-2.8 2.3-2.8Z" fill="#1a1a19"/><path d="M41 35c-2 10 0 16 5 23s5 7 5 12" fill="none" stroke="#1a1a19" stroke-width="11"/><path d="M51 90 39 70q12 5 24 0Z" fill="#1a1a19"/><path d="M75 88c-1-9 1-14 5-20s5-7 5-13" fill="none" stroke="#1a1a19" stroke-width="11"/><path d="M85 36 74 55q11-4.5 22 0Z" fill="#1a1a19"/>'),
-    pedestrian: DIAMOND('<circle cx="60" cy="30" r="8" fill="#1a1a19"/><path d="M53 39q7-5 13 0l-3 24h-8Z" fill="#1a1a19"/><path d="M63 44l7 14M55 44l-8 12" stroke="#1a1a19" stroke-width="5.5" fill="none" stroke-linecap="round"/><path d="M55 62l-7 14-6 13M61 63l4 13 9 11" stroke="#1a1a19" stroke-width="6.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
+    pedestrian: DIAMOND('<circle cx="60" cy="30" r="8" fill="#1a1a19"/><path d="M53 39q7-5 13 0l-3 24h-8Z" fill="#1a1a19"/><path d="M63 44l7 14M55 44l-8 12" stroke="#1a1a19" stroke-width="5.5" fill="none" stroke-linecap="round"/><path d="M55 62l-7 14-4 11M61 63l4 13 9 11" stroke="#1a1a19" stroke-width="6.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
   };
 
   /* ---- Storage ---- */
